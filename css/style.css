@@ -171,30 +171,41 @@ main.container { position: relative; overflow: hidden; }
   position: relative;
   line-height: 0.82;
   margin-inline: auto;
+  padding-block: var(--space-4) var(--space-5);
 }
 .hero-title .big {
   display: block;
   font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(2.8rem, 1.4rem + 13vw, 6rem);
-  color: transparent;
-  -webkit-text-stroke: 1.8px var(--color-brown-deep);
-  text-stroke: 1.8px var(--color-brown-deep);
+  font-size: clamp(3.1rem, 1.5rem + 14vw, 6.6rem);
   letter-spacing: 0.02em;
   white-space: nowrap;
+  color: transparent;
+  background: linear-gradient(100deg, var(--color-brown-deep) 8%, var(--color-terracotta) 48%, var(--color-gold) 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow:
+    5px 5px 0 rgba(240, 196, 138, 0.9),
+    10px 10px 0 rgba(169, 128, 95, 0.45);
+  transform: rotate(-2.5deg);
+  transform-origin: center;
 }
 .hero-title .overlay {
   position: absolute;
   top: 52%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(2deg);
+  transform-origin: center;
+  background: var(--color-ink);
+  color: var(--color-cream);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
   letter-spacing: 0.32em;
-  color: var(--color-ink);
   white-space: nowrap;
-  padding-inline-start: 0.32em;
+  padding: 0.5em 0.9em 0.5em 1.05em;
+  border-radius: 2px;
+  box-shadow: 0 6px 16px rgba(26, 26, 20, 0.35);
 }
 
 /* ---------- full-bleed wave divider (crosses the whole screen) ---------- */
