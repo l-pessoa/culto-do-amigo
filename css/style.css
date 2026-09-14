@@ -46,6 +46,7 @@ h1, h2, h3, p { margin: 0; }
 }
 
 main { padding-block: var(--space-6); }
+main.container { position: relative; overflow: hidden; }
 
 /* ---------- header / nav ---------- */
 .site-header {
@@ -196,23 +197,22 @@ main { padding-block: var(--space-6); }
   padding-inline-start: 0.32em;
 }
 
-/* ---------- thin wave rule (between cream sections) ---------- */
-.wave-rule {
-  width: 140px;
-  margin-inline: auto;
-  color: var(--color-gold);
+/* ---------- full-bleed wave divider (crosses the whole screen) ---------- */
+.wave-full {
+  width: 100%;
+  line-height: 0;
+  position: relative;
+  z-index: 1;
 }
-.wave-rule svg {
+.wave-full svg {
   display: block;
   width: 100%;
-  height: 14px;
+  height: clamp(48px, 6vw, 90px);
 }
-.wave-rule path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
+.wave-full path { fill: currentColor; }
+.wave-full.tone-terracotta { color: var(--color-terracotta); opacity: .85; }
+.wave-full.tone-gold { color: var(--color-gold); opacity: .85; }
+.wave-full.tone-ink { color: var(--color-ink); }
 
 /* ---------- section titles (script) ---------- */
 .script-title {
@@ -226,10 +226,10 @@ main { padding-block: var(--space-6); }
 .script-title.lg { font-size: var(--fs-script-lg); }
 
 .eyebrow-plain {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: var(--fs-small);
-  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  color: var(--color-brown-deep);
 }
 
 /* ---------- dark panel ---------- */
@@ -243,9 +243,9 @@ main { padding-block: var(--space-6); }
 .panel-dark__title {
   text-align: center;
   color: var(--color-gold);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: var(--fs-label);
   margin-bottom: var(--space-5);
 }
 
@@ -423,6 +423,8 @@ main { padding-block: var(--space-6); }
 .hino-category + .hino-category { margin-top: var(--space-6); }
 .hino-category__title {
   margin-bottom: var(--space-3);
+  font-size: var(--fs-h3);
+  color: var(--color-brown-deep);
 }
 .hino-grid {
   display: grid;
@@ -515,6 +517,29 @@ main { padding-block: var(--space-6); }
 .band-ink .content-narrow p { color: var(--color-cream); opacity: .92; }
 .band-ink .link-more { color: var(--color-cream); border-bottom-color: var(--color-gold); }
 
+/* ---------- edge ornaments (fill the empty side margins) ---------- */
+.ornament {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(46px, 8vw, 110px);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0;
+}
+.ornament svg { display: block; width: 100%; height: auto; }
+.ornament-left { left: clamp(-6px, 1vw, 22px); }
+.ornament-right { right: clamp(-6px, 1vw, 22px); }
+.ornament.tone-terracotta { color: var(--color-terracotta); }
+.ornament.tone-mauve { color: var(--color-mauve); }
+.ornament.tone-gold { color: var(--color-gold); }
+.ornament.tone-brown { color: var(--color-brown-deep); }
+@media (max-width: 520px) {
+  .ornament { width: 34px; opacity: 0.55; }
+  .ornament-left { left: -16px; }
+  .ornament-right { right: -16px; }
+}
+
 .section-watermark {
   position: absolute;
   top: 50%;
@@ -541,18 +566,29 @@ main { padding-block: var(--space-6); }
   margin-bottom: var(--space-2);
 }
 
-/* ---------- scroll reveal ---------- */
-.reveal {
+/* ---------- scroll reveal ----------
+   .reveal is the observed element (gets .is-visible from reveal.js).
+   It animates itself AND any nested .reveal-child, so it works both as
+   a single self-animating block or as a container that staggers its
+   children in one after another. */
+.reveal,
+.reveal-child {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .7s ease, transform .7s ease;
+  transform: translateY(34px) scale(.97);
+  transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
 }
-.reveal.is-visible {
+.reveal.is-visible,
+.reveal.is-visible.reveal-child,
+.reveal.is-visible .reveal-child {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
+.reveal.is-visible .reveal-child:nth-child(1) { transition-delay: 0s; }
+.reveal.is-visible .reveal-child:nth-child(2) { transition-delay: .16s; }
+.reveal.is-visible .reveal-child:nth-child(3) { transition-delay: .32s; }
+.reveal.is-visible .reveal-child:nth-child(4) { transition-delay: .48s; }
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .reveal-child { opacity: 1; transform: none; transition: none; }
 }
 .section-head {
   text-align: center;
