@@ -11,11 +11,9 @@ function renderCarousel() {
   track.innerHTML = destaques
     .map(
       (hino) => `
-        <a class="carousel-item hino-card" href="louvores.html">
-          <div class="hino-card__disc"><div class="disc"></div></div>
-          <div class="hino-card__body">
-            <p class="hino-card__title">${hino.titulo}</p>
-          </div>
+        <a class="carousel-item carousel-disc-item" href="louvores.html">
+          <div class="disc"></div>
+          <p class="carousel-disc-title">${hino.titulo}</p>
         </a>`
     )
     .join("");
