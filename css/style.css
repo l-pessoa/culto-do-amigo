@@ -168,13 +168,25 @@ main.container { position: relative; overflow: hidden; }
   overflow: hidden;
 }
 .hero-title {
-  position: relative;
-  line-height: 0.82;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-inline: auto;
   padding-block: var(--space-4) var(--space-5);
 }
+.hero-title .overlay {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+  letter-spacing: 0.32em;
+  color: var(--color-ink);
+  white-space: nowrap;
+  padding-inline-start: 0.32em;
+  margin-bottom: var(--space-3);
+}
 .hero-title .big {
   display: block;
+  line-height: 0.82;
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(3.1rem, 1.5rem + 14vw, 6.6rem);
@@ -189,23 +201,6 @@ main.container { position: relative; overflow: hidden; }
     10px 10px 0 rgba(169, 128, 95, 0.45);
   transform: rotate(-2.5deg);
   transform-origin: center;
-}
-.hero-title .overlay {
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(2deg);
-  transform-origin: center;
-  background: var(--color-ink);
-  color: var(--color-cream);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
-  letter-spacing: 0.32em;
-  white-space: nowrap;
-  padding: 0.5em 0.9em 0.5em 1.05em;
-  border-radius: 2px;
-  box-shadow: 0 6px 16px rgba(26, 26, 20, 0.35);
 }
 
 /* ---------- full-bleed wave divider (crosses the whole screen) ---------- */
