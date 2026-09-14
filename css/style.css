@@ -177,12 +177,18 @@ main.container { position: relative; overflow: hidden; }
 .hero-title .overlay {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: clamp(0.8rem, 0.6rem + 1vw, 1.2rem);
+  font-size: clamp(0.93rem, 0.45rem + 4.2vw, 1.98rem);
   letter-spacing: 0.32em;
-  color: var(--color-ink);
   white-space: nowrap;
   padding-inline-start: 0.32em;
   margin-bottom: var(--space-3);
+  color: transparent;
+  background: linear-gradient(100deg, var(--color-brown-deep) 8%, var(--color-terracotta) 48%, var(--color-gold) 88%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow:
+    2px 2px 0 rgba(240, 196, 138, 0.9),
+    4px 4px 0 rgba(169, 128, 95, 0.45);
 }
 .hero-title .big {
   display: block;
