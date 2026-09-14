@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite — Culto do Amigo</title>
+  <meta name="description" content="Você é nosso convidado especial para o Culto do Amigo. Veja o endereço e compartilhe com um amigo.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="convite">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">AEC</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="sr-only">Abrir menu</span>
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="index.html" data-page="index">Home</a></li>
+          <li><a href="louvores.html" data-page="louvores">Louvores</a></li>
+          <li><a href="tema.html" data-page="tema">Lema</a></li>
+          <li><a href="pregacao.html" data-page="pregacao">Pregação</a></li>
+          <li><a href="convite.html" data-page="convite">Convite</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="section-head">
+      <h1 class="script-title lg">Convite</h1>
+    </div>
+
+    <div class="paper-block content-narrow">
+      <p class="verse" id="convite-frase"></p>
+      <p id="convite-texto"></p>
+    </div>
+
+    <div class="content-narrow">
+      <p class="endereco-text" id="convite-endereco"></p>
+      <div class="convite-actions">
+        <a class="btn btn-outline" id="convite-maps-link" href="#" target="_blank" rel="noopener">Como chegar</a>
+        <a class="btn btn-whatsapp" id="convite-whatsapp-link" href="#" target="_blank" rel="noopener">Compartilhar no WhatsApp</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>AEC — Culto do Amigo</p>
+  </footer>
+
+  <script src="js/nav.js" defer></script>
+  <script type="module" src="js/pagina-conteudo.js"></script>
+</body>
+</html>

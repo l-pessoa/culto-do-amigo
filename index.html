@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culto do Amigo — AEC</title>
+  <meta name="description" content="Você é nosso convidado especial. Conheça o Culto do Amigo: louvores, lema, pregação e convite.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">AEC</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="sr-only">Abrir menu</span>
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="index.html" data-page="index">Home</a></li>
+          <li><a href="louvores.html" data-page="louvores">Louvores</a></li>
+          <li><a href="tema.html" data-page="tema">Lema</a></li>
+          <li><a href="pregacao.html" data-page="pregacao">Pregação</a></li>
+          <li><a href="convite.html" data-page="convite">Convite</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <p class="eyebrow-plain">Culto do Amigo</p>
+      <div class="hero-title">
+        <span class="big" id="home-hero-title">AMIGO</span>
+        <span class="overlay" id="home-hero-overlay">CULTO DO</span>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="home-louvores-heading">
+      <div class="panel-dark">
+        <p class="panel-dark__title" id="home-louvores-heading">LOUVORES</p>
+        <div class="carousel-wrap">
+          <button type="button" class="carousel-nav-btn prev" aria-label="Louvores anteriores">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="carousel" id="home-carousel-track"></div>
+          <button type="button" class="carousel-nav-btn next" aria-label="Próximos louvores">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="carousel-panel-foot">
+        <a class="link-more" href="louvores.html">Ver todos os louvores →</a>
+      </p>
+    </section>
+
+    <section class="section container" aria-labelledby="home-lema-heading">
+      <div class="section-head">
+        <h2 class="script-title" id="home-lema-heading">Lema</h2>
+      </div>
+      <div class="content-narrow">
+        <p id="home-lema-frase"></p>
+        <a class="link-more" href="tema.html">Ler mais →</a>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="home-pregacao-heading">
+      <div class="section-head">
+        <h2 class="script-title" id="home-pregacao-heading">Versículo</h2>
+      </div>
+      <div class="paper-block content-narrow">
+        <p class="verse" id="home-pregacao-versiculo"></p>
+        <span class="reference" id="home-pregacao-referencia"></span>
+      </div>
+      <p class="carousel-panel-foot">
+        <a class="link-more" href="pregacao.html">Ler mais →</a>
+      </p>
+    </section>
+
+    <section class="section container" aria-labelledby="home-convite-heading">
+      <div class="section-head">
+        <h2 class="script-title" id="home-convite-heading">Convite</h2>
+      </div>
+      <div class="content-narrow">
+        <p id="home-convite-texto"></p>
+        <a class="link-more" href="convite.html">Ler mais →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>AEC — Culto do Amigo</p>
+  </footer>
+
+  <script src="js/nav.js" defer></script>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

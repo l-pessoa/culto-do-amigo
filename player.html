@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tocando agora — Culto do Amigo</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="louvores">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">AEC</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="sr-only">Abrir menu</span>
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="index.html" data-page="index">Home</a></li>
+          <li><a href="louvores.html" data-page="louvores">Louvores</a></li>
+          <li><a href="tema.html" data-page="tema">Lema</a></li>
+          <li><a href="pregacao.html" data-page="pregacao">Pregação</a></li>
+          <li><a href="convite.html" data-page="convite">Convite</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container player-page" id="player-root"></main>
+
+  <script src="js/nav.js" defer></script>
+  <script type="module" src="js/player.js"></script>
+</body>
+</html>
