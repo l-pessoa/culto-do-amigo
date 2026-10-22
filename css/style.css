@@ -766,6 +766,20 @@ main.container { position: relative; overflow: hidden; }
   .ornament-right { right: -16px; }
 }
 
+/* motif: equalizer bars (hero) — gentle audio-pulse, never frantic */
+.motif-wave .wave-bar {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: wave-pulse 2.6s ease-in-out infinite;
+}
+@keyframes wave-pulse {
+  0%, 100% { transform: scaleY(0.55); }
+  50% { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motif-wave .wave-bar { animation: none; transform: scaleY(0.8); }
+}
+
 .section-watermark {
   position: absolute;
   top: 50%;
