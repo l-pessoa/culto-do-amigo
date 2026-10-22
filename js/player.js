@@ -19,23 +19,25 @@ if (!hino) {
 function renderPlayer(hino) {
   root.innerHTML = `
     <p class="player-back"><a href="louvores.html">&larr; Voltar</a></p>
-    <div class="player-disc-wrap"><div class="disc" id="player-disc"></div></div>
-    <div>
-      <h1 class="player-title">${hino.titulo}</h1>
-      <p class="player-category">${hino.categoria}</p>
-    </div>
-    <div id="player-audio-area">
-      <div class="player-scrubber" id="player-scrubber">
-        <div class="player-scrubber__fill" id="player-scrubber-fill"></div>
+    <div class="player-panel">
+      <div class="player-disc-wrap"><div class="disc" id="player-disc"></div></div>
+      <div class="player-info">
+        <h1 class="player-title">${hino.titulo}</h1>
+        <p class="player-category">${hino.categoria}</p>
       </div>
-      <div class="player-time">
-        <span id="player-time-current">0:00</span>
-        <span id="player-time-duration">0:00</span>
-      </div>
-      <div class="player-controls">
-        <button type="button" id="player-prev" aria-label="Hino anterior">${iconPrev()}</button>
-        <button type="button" id="player-play" class="play-pause" aria-label="Tocar">${iconPlay()}</button>
-        <button type="button" id="player-next" aria-label="Próximo hino">${iconNext()}</button>
+      <div id="player-audio-area" class="player-audio-area">
+        <div class="player-scrubber" id="player-scrubber">
+          <div class="player-scrubber__fill" id="player-scrubber-fill"></div>
+        </div>
+        <div class="player-time">
+          <span id="player-time-current">0:00</span>
+          <span id="player-time-duration">0:00</span>
+        </div>
+        <div class="player-controls">
+          <button type="button" id="player-prev" aria-label="Hino anterior">${iconPrev()}</button>
+          <button type="button" id="player-play" class="play-pause" aria-label="Tocar">${iconPlay()}</button>
+          <button type="button" id="player-next" aria-label="Próximo hino">${iconNext()}</button>
+        </div>
       </div>
     </div>
     <audio id="player-audio" src="${hino.arquivoAudio}" preload="none"></audio>

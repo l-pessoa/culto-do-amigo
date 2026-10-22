@@ -10,6 +10,7 @@
   --color-white: #FFFFFF;
   --color-ink-2: #2B2117;
   --color-ink-3: #352617;
+  --color-gold-deep: #9C6B22;
 
   /* uso semântico */
   --bg-page: var(--color-cream);
