@@ -21,6 +21,7 @@ if (page === "tema") {
 if (page === "pregacao") {
   setText("pregacao-versiculo", `"${conteudo.pregacao.versiculo}"`);
   setText("pregacao-referencia", conteudo.pregacao.referencia);
+  setText("pregacao-watermark", conteudo.pregacao.referencia);
 }
 
 if (page === "convite") {

@@ -1,7 +1,5 @@
 import { conteudo, CATEGORIAS_ORDEM } from "../data/conteudo.js";
 
-const ICON_PREV = `<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 5v14l-11-7z"/><rect x="4" y="5" width="2" height="14"/></svg>`;
-const ICON_NEXT = `<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 5v14l11-7z"/><rect x="18" y="5" width="2" height="14"/></svg>`;
 const ICON_PLAY = `<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>`;
 
 function renderCategoryList() {
@@ -37,39 +35,31 @@ function renderGrid() {
     const hinosDaCategoria = conteudo.hinos.filter((h) => h.categoria === categoria);
     if (hinosDaCategoria.length === 0) return "";
 
-    const cards = hinosDaCategoria.map((hino) => hinoCardHtml(hino)).join("");
+    const rows = hinosDaCategoria.map((hino) => playlistRowHtml(hino)).join("");
 
     return `
       <div class="hino-category" id="categoria-${slugify(categoria)}">
-        <h3 class="hino-category__title eyebrow-plain">${categoria}</h3>
-        <div class="hino-grid">${cards}</div>
+        <div class="playlist-card">
+          <div class="playlist-card__head">
+            <p class="playlist-card__title">${categoria}</p>
+            <p class="playlist-card__count">${hinosDaCategoria.length} hino${hinosDaCategoria.length === 1 ? "" : "s"}</p>
+          </div>
+          <div class="playlist-rows">${rows}</div>
+        </div>
       </div>`;
   }).join("");
 }
 
-function hinoCardHtml(hino) {
+function playlistRowHtml(hino) {
   return `
-    <a class="hino-card" href="player.html?hino=${encodeURIComponent(hino.id)}">
-      <div class="hino-card__disc"><div class="disc"></div></div>
-      <div class="hino-card__body">
-        <p class="hino-card__title">${hino.titulo}</p>
-        <div class="hino-card__scrubber" aria-hidden="true"><span></span></div>
-        <div class="hino-card__controls" aria-hidden="true">
-          ${ICON_PREV}
-          <span class="play">${ICON_PLAY}</span>
-          ${ICON_NEXT}
-        </div>
-        <div class="hino-card__meta" aria-hidden="true">
-          <span>${hino.categoria}</span>
-          <span class="waveform">${waveformBars()}</span>
-        </div>
+    <a class="playlist-row" href="player.html?hino=${encodeURIComponent(hino.id)}">
+      <div class="disc disc--sm disc--idle" aria-hidden="true"></div>
+      <div class="playlist-row__body">
+        <p class="playlist-row__title">${hino.titulo}</p>
+        <p class="playlist-row__meta">${hino.categoria}</p>
       </div>
+      <span class="playlist-row__play" aria-hidden="true">${ICON_PLAY}</span>
     </a>`;
-}
-
-function waveformBars() {
-  const heights = [4, 8, 6, 10, 5, 9, 4];
-  return heights.map((h) => `<span style="height:${h}px"></span>`).join("");
 }
 
 renderCategoryList();

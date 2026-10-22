@@ -8,6 +8,8 @@
   --color-cream: #E6E6D9;
   --color-cream-soft: #EDEDE2;
   --color-white: #FFFFFF;
+  --color-ink-2: #2B2117;
+  --color-ink-3: #352617;
 
   /* uso semântico */
   --bg-page: var(--color-cream);
@@ -15,6 +17,7 @@
   --text-body: var(--color-ink);
   --text-muted: var(--color-brown-deep);
   --text-on-dark: var(--color-cream);
+  --text-on-dark-muted: rgba(230, 230, 217, 0.62);
   --border-gold: var(--color-gold);
   --accent: var(--color-terracotta);
 
@@ -26,6 +29,7 @@
   --fs-small: 0.875rem;
   --fs-body: 1rem;
   --fs-lead: 1.2rem;
+  --fs-h4: 1.05rem;
   --fs-h3: 1.4rem;
   --fs-h2: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
   --fs-h1: clamp(2.75rem, 1.8rem + 4.5vw, 4.75rem);
@@ -45,6 +49,7 @@
 
   --radius: 4px;
   --radius-lg: 8px;
+  --radius-pill: 999px;
   --max-width: 1100px;
   --gutter: 20px;
   --header-height: 64px;
