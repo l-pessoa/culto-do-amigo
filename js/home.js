@@ -43,6 +43,7 @@ function renderPreviewText() {
   const map = {
     "home-hero-title": conteudo.home.tituloTop,
     "home-hero-overlay": conteudo.home.tituloOverlay,
+    "home-hero-tagline": conteudo.convite.frase,
     "home-lema-frase": conteudo.lema.fraseEfeito,
     "home-pregacao-versiculo": `"${conteudo.pregacao.versiculo}"`,
     "home-pregacao-referencia": conteudo.pregacao.referencia,

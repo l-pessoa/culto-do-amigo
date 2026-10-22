@@ -11,16 +11,25 @@
   --color-ink-2: #2B2117;
   --color-ink-3: #352617;
   --color-gold-deep: #9C6B22;
+  --color-cream-dim: #CBBDA3;
 
-  /* uso semântico */
+  /* uso semântico (tema claro, padrão) */
   --bg-page: var(--color-cream);
+  --bg-surface: var(--color-white);
+  --bg-surface-soft: var(--color-cream-soft);
   --bg-panel-dark: var(--color-ink);
+  --header-bg: var(--color-white);
+  --border-soft: var(--color-cream-soft);
   --text-body: var(--color-ink);
   --text-muted: var(--color-brown-deep);
   --text-on-dark: var(--color-cream);
   --text-on-dark-muted: rgba(230, 230, 217, 0.62);
   --border-gold: var(--color-gold);
   --accent: var(--color-terracotta);
+  --accent-text: var(--color-gold-deep);
+  --hero-grad-1: var(--color-brown-deep);
+  --hero-grad-2: var(--color-terracotta);
+  --hero-grad-3: var(--color-gold-deep);
 
   /* tipografia */
   --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -56,4 +65,19 @@
   --header-height: 64px;
 
   --touch-target: 44px;
+}
+
+/* ---------- tema escuro ---------- */
+:root[data-theme="dark"] {
+  --bg-page: #15110B;
+  --bg-surface: var(--color-ink-2);
+  --bg-surface-soft: var(--color-ink-3);
+  --header-bg: var(--color-ink-2);
+  --border-soft: rgba(240, 196, 138, 0.16);
+  --text-body: var(--color-cream);
+  --text-muted: var(--color-cream-dim);
+  --accent-text: var(--color-gold);
+  --hero-grad-1: var(--color-terracotta);
+  --hero-grad-2: var(--color-gold);
+  --hero-grad-3: var(--color-cream);
 }

@@ -40,6 +40,7 @@ function renderPlayer(hino) {
         </div>
       </div>
     </div>
+    ${upNextHtml(hino)}
     <audio id="player-audio" src="${hino.arquivoAudio}" preload="none"></audio>
   `;
 
@@ -112,6 +113,37 @@ function renderPlayer(hino) {
   audio.addEventListener("error", () => {
     audioArea.innerHTML = `<p class="player-unavailable">Áudio ainda não disponível para este hino.</p>`;
   });
+}
+
+function upNextHtml(current) {
+  const related = conteudo.hinos.filter(
+    (h) => h.categoria === current.categoria && h.id !== current.id
+  );
+  if (related.length === 0) return "";
+
+  const rows = related
+    .map(
+      (h) => `
+        <a class="playlist-row" href="player.html?hino=${encodeURIComponent(h.id)}">
+          <div class="disc disc--sm disc--idle" aria-hidden="true"></div>
+          <div class="playlist-row__body">
+            <p class="playlist-row__title">${h.titulo}</p>
+            <p class="playlist-row__meta">${h.categoria}</p>
+          </div>
+          <span class="playlist-row__play" aria-hidden="true">${iconPlay()}</span>
+        </a>`
+    )
+    .join("");
+
+  return `
+    <div class="up-next">
+      <div class="playlist-card">
+        <div class="playlist-card__head">
+          <p class="playlist-card__title">Mais de ${current.categoria}</p>
+        </div>
+        <div class="playlist-rows">${rows}</div>
+      </div>
+    </div>`;
 }
 
 function formatTime(seconds) {
