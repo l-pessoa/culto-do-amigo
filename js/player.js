@@ -1,4 +1,5 @@
 import { conteudo } from "../data/conteudo.js";
+import { discCoverHtml } from "./disc.js";
 
 const params = new URLSearchParams(location.search);
 const hinoId = params.get("hino");
@@ -20,7 +21,7 @@ function renderPlayer(hino) {
   root.innerHTML = `
     <p class="player-back"><a href="louvores.html">&larr; Voltar</a></p>
     <div class="player-panel">
-      <div class="player-disc-wrap"><div class="disc" id="player-disc"></div></div>
+      <div class="player-disc-wrap"><div class="disc" id="player-disc">${discCoverHtml(hino)}</div></div>
       <div class="player-info">
         <h1 class="player-title">${hino.titulo}</h1>
         <p class="player-category">${hino.categoria}</p>
@@ -125,7 +126,7 @@ function upNextHtml(current) {
     .map(
       (h) => `
         <a class="playlist-row" href="player.html?hino=${encodeURIComponent(h.id)}">
-          <div class="disc disc--sm disc--idle" aria-hidden="true"></div>
+          <div class="disc disc--sm disc--idle" aria-hidden="true">${discCoverHtml(h)}</div>
           <div class="playlist-row__body">
             <p class="playlist-row__title">${h.titulo}</p>
             <p class="playlist-row__meta">${h.categoria}</p>

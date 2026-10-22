@@ -48,7 +48,7 @@ export const conteudo = {
     { id: "harpa-1", categoria: "Harpa", titulo: "Grandioso És Tu", arquivoAudio: "/assets/audio/harpa-1.mp3" }, // [PLACEHOLDER]
     { id: "harpa-2", categoria: "Harpa", titulo: "Castelo Forte", arquivoAudio: "/assets/audio/harpa-2.mp3" }, // [PLACEHOLDER]
     { id: "criancas-1", categoria: "Crianças", titulo: "Deus É Tão Bom", arquivoAudio: "/assets/audio/criancas-1.mp3" }, // [PLACEHOLDER]
-    { id: "irmas-1", categoria: "Irmãs", titulo: "Preciosas Promessas", arquivoAudio: "/assets/audio/irmas-1.mp3" }, // [PLACEHOLDER]
+    { id: "irmas-1", categoria: "Irmãs", titulo: "Amor de Deus", arquivoAudio: "/assets/audio/irmas-1.mp3", capa: "/assets/img/irmas-1-capa.png" },
     { id: "jovens-1", categoria: "Jovens e Adolescentes", titulo: "Digno É o Senhor", arquivoAudio: "/assets/audio/jovens-1.mp3" }, // [PLACEHOLDER]
     { id: "coral-1", categoria: "Coral", titulo: "Aleluia, Grande É o Senhor", arquivoAudio: "/assets/audio/coral-1.mp3" }, // [PLACEHOLDER]
   ],

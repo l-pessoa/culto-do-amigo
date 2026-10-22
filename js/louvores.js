@@ -1,4 +1,5 @@
 import { conteudo, CATEGORIAS_ORDEM } from "../data/conteudo.js";
+import { discCoverHtml } from "./disc.js";
 
 const ICON_PLAY = `<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>`;
 
@@ -53,7 +54,7 @@ function renderGrid() {
 function playlistRowHtml(hino) {
   return `
     <a class="playlist-row" href="player.html?hino=${encodeURIComponent(hino.id)}">
-      <div class="disc disc--sm disc--idle" aria-hidden="true"></div>
+      <div class="disc disc--sm disc--idle" aria-hidden="true">${discCoverHtml(hino)}</div>
       <div class="playlist-row__body">
         <p class="playlist-row__title">${hino.titulo}</p>
         <p class="playlist-row__meta">${hino.categoria}</p>

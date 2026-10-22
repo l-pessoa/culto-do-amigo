@@ -1,4 +1,5 @@
 import { conteudo, CATEGORIAS_ORDEM } from "../data/conteudo.js";
+import { discCoverHtml } from "./disc.js";
 
 function slugify(text) {
   return text
@@ -20,7 +21,7 @@ function renderCarousel() {
     .map(
       (hino) => `
         <a class="carousel-item carousel-disc-item" href="louvores.html#categoria-${slugify(hino.categoria)}">
-          <div class="disc disc--idle"></div>
+          <div class="disc disc--idle">${discCoverHtml(hino)}</div>
           <p class="carousel-disc-title">${hino.titulo}</p>
           <span class="carousel-disc-category">${hino.categoria}</span>
         </a>`
