@@ -29,8 +29,8 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: multiply;
+  opacity: 0.05;
+  mix-blend-mode: screen;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .site-header, main, .site-footer { position: relative; z-index: 1; }
@@ -172,25 +172,6 @@ main.container { position: relative; overflow: hidden; }
     border-bottom: 2px solid var(--color-gold);
   }
 }
-
-/* ---------- theme toggle ---------- */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--touch-target);
-  height: var(--touch-target);
-  flex-shrink: 0;
-  border-radius: 50%;
-  color: var(--text-body);
-  transition: background-color .18s ease, color .18s ease, transform .15s ease;
-}
-.theme-toggle:hover { background: rgba(169,128,95,.12); }
-.theme-toggle:active { transform: scale(.92); }
-.theme-toggle__moon { display: block; }
-.theme-toggle__sun { display: none; }
-[data-theme="dark"] .theme-toggle__moon { display: none; }
-[data-theme="dark"] .theme-toggle__sun { display: block; }
 
 /* ---------- hero (home) ---------- */
 .hero {
@@ -712,13 +693,11 @@ main.container { position: relative; overflow: hidden; }
 }
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0) scale(.98); }
-.btn-primary { background: var(--color-brown-deep); color: var(--color-cream); }
-.btn-primary:hover { background: var(--color-ink-3); box-shadow: 0 6px 16px rgba(110,74,52,.35); }
-[data-theme="dark"] .btn-primary {
+.btn-primary {
   background: linear-gradient(165deg, var(--color-gold), var(--color-terracotta));
   color: var(--color-ink);
 }
-[data-theme="dark"] .btn-primary:hover {
+.btn-primary:hover {
   background: linear-gradient(165deg, #f5d6a3, var(--color-terracotta));
   box-shadow: 0 6px 16px rgba(0,0,0,.45);
 }
