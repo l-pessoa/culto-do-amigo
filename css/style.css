@@ -215,6 +215,47 @@ main.container { position: relative; overflow: hidden; }
   }
 }
 
+/* ---------- home: one section per scroll ----------
+   `main` is the explicit scroll container (not body/html, whose
+   scrolling-element behavior is inconsistent across browsers), so the
+   snap is guaranteed to actually engage. Only min-height +
+   scroll-snap-align change on .hero/.section — display is left alone
+   so nothing inside (the Louvores carousel included) gets reflowed. */
+body[data-page="index"] {
+  height: 100dvh;
+  overflow: hidden;
+}
+body[data-page="index"] main {
+  height: calc(100dvh - var(--header-height));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+body[data-page="index"] .hero,
+body[data-page="index"] main > .section {
+  scroll-snap-align: start;
+  min-height: 100%;
+}
+body[data-page="index"] .site-footer {
+  scroll-snap-align: start;
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="index"] {
+    height: auto;
+    overflow: visible;
+  }
+  body[data-page="index"] main {
+    height: auto;
+    overflow-y: visible;
+    scroll-snap-type: none;
+  }
+  body[data-page="index"] .hero,
+  body[data-page="index"] main > .section {
+    min-height: 0;
+  }
+}
+
 /* ---------- hero (home) ---------- */
 .hero {
   background: transparent;
