@@ -216,23 +216,40 @@ main.container { position: relative; overflow: hidden; }
 }
 
 /* ---------- home: one section per scroll ----------
-   Hero → Louvores → Lema → Pregação → Convite: 5 full-height snap
-   stops, 4 scrolls apart. Each section settles into place instead of
-   blending into the next, then its content fades/blurs up via .reveal. */
+   `main` (not body/html, whose scrolling-element behavior is
+   inconsistent across browsers) is the explicit scroll container, so
+   the snap is guaranteed to actually engage. Only min-height +
+   scroll-snap-align change here — deliberately NOT touching display,
+   so nothing inside (the Louvores carousel included) gets reflowed. */
 body[data-page="index"] {
+  height: 100dvh;
+  overflow: hidden;
+}
+body[data-page="index"] main {
+  height: calc(100dvh - var(--header-height));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 body[data-page="index"] .hero,
 body[data-page="index"] main > .section {
   scroll-snap-align: start;
-  scroll-margin-top: var(--header-height);
-  min-height: calc(100dvh - var(--header-height));
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: 100%;
+}
+body[data-page="index"] .site-footer {
+  scroll-snap-align: start;
 }
 @media (prefers-reduced-motion: reduce) {
-  body[data-page="index"] { scroll-snap-type: none; }
+  body[data-page="index"] {
+    height: auto;
+    overflow: visible;
+  }
+  body[data-page="index"] main {
+    height: auto;
+    overflow-y: visible;
+    scroll-snap-type: none;
+  }
 }
 
 /* ---------- hero (home) ---------- */
