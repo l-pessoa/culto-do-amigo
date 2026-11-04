@@ -247,6 +247,11 @@ export const conteudo = {
         "É ali onde eu me encontro com a fonte do amor",
         "O melhor lugar do mundo, é aos pés, do salvador",
       ],
+      tempos: [
+        35.22, 44.14, 50.74, 62.49, 80, 96.92, 105.1, 115.04, 123.29, 142.1,
+        151.5, 159.85, 166.2, 177.84, 195.56, 206.07, 220.45, 230.27, 238.15, 247.97,
+        258.59, 263.79, 270.18, 278.19, // última linha estimada
+      ],
     },
   ],
 };
