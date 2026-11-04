@@ -115,15 +115,28 @@ function renderPlayer(hino) {
     const pct = (audio.currentTime / audio.duration) * 100;
     scrubberFill.style.width = `${pct}%`;
     timeCurrent.textContent = formatTime(audio.currentTime);
-    updateLyrics(audio.currentTime / audio.duration);
+    updateLyrics(audio.currentTime, audio.duration);
   });
 
-  function updateLyrics(progress) {
+  const temposReais = hino.tempos && hino.tempos.length === lyricsLines.length ? hino.tempos : null;
+
+  function updateLyrics(currentTime, duration) {
     if (lyricsLines.length === 0) return;
-    const index = Math.min(
-      lyricsLines.length - 1,
-      Math.floor(progress * lyricsLines.length)
-    );
+
+    let index;
+    if (temposReais) {
+      index = 0;
+      for (let i = 0; i < temposReais.length; i++) {
+        if (currentTime >= temposReais[i]) index = i;
+        else break;
+      }
+    } else {
+      index = Math.min(
+        lyricsLines.length - 1,
+        Math.floor((currentTime / duration) * lyricsLines.length)
+      );
+    }
+
     if (index === currentLyricIndex) return;
     currentLyricIndex = index;
     lyricsLines.forEach((line, i) => {

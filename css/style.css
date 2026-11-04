@@ -1228,6 +1228,94 @@ body[data-page="index"] .site-footer {
   .lyrics-line.is-current { transform: none; }
 }
 
+/* ---------- sincronizar (ferramenta interna de tempo da letra) ---------- */
+.sync-intro {
+  max-width: 560px;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+  text-align: center;
+  color: var(--text-muted);
+}
+.sync-tool-card {
+  max-width: 560px;
+  margin-inline: auto;
+  background: linear-gradient(165deg, var(--color-ink-2), var(--bg-panel-dark) 65%);
+  border: 3px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+  box-shadow: 0 10px 30px rgba(26,26,20,.25);
+}
+.sync-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+.sync-select {
+  width: 100%;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  background: var(--bg-surface);
+  color: var(--text-body);
+  font: inherit;
+}
+.sync-lines {
+  max-height: 38vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: rgba(0,0,0,.18);
+}
+.sync-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  text-align: center;
+  padding-block: 4px;
+  color: var(--text-on-dark-muted);
+  transition: color .2s ease, transform .2s ease;
+}
+.sync-line--done { color: var(--color-cream); font-style: normal; }
+.sync-line--next {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-style: normal;
+  transform: scale(1.06);
+}
+.sync-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+.sync-output { margin-top: var(--space-5); }
+.sync-output__label {
+  color: var(--text-on-dark-muted);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-2);
+}
+.sync-textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  background: rgba(0,0,0,.25);
+  color: var(--color-cream);
+  font-family: monospace;
+  font-size: var(--fs-small);
+  resize: vertical;
+}
+.sync-copy-msg {
+  margin-left: var(--space-3);
+  color: var(--color-gold);
+  font-size: var(--fs-small);
+}
+
 /* ---------- convite ---------- */
 .endereco-text {
   color: var(--text-muted);
