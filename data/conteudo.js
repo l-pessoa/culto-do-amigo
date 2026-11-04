@@ -1,10 +1,8 @@
 // Conteúdo central do site. Todo HTML/JS de apresentação lê daqui —
 // nunca hardcode texto de conteúdo direto no markup.
 //
-// Placeholders marcados com [PLACEHOLDER] ainda não têm arquivo de áudio
-// (.mp3) disponível em /assets/audio — o player trata isso mostrando um
-// aviso em vez de quebrar. Nomes reais dos hinos e ordem final ainda
-// serão confirmados.
+// Placeholders marcados com [PLACEHOLDER] ainda não têm dado real
+// confirmado — o endereço da igreja é o único que resta.
 
 export const conteudo = {
   igreja: {
@@ -45,12 +43,13 @@ export const conteudo = {
   },
 
   hinos: [
-    { id: "harpa-1", categoria: "Harpa", titulo: "Grandioso És Tu", arquivoAudio: "/assets/audio/harpa-1.mp3" }, // [PLACEHOLDER]
-    { id: "harpa-2", categoria: "Harpa", titulo: "Castelo Forte", arquivoAudio: "/assets/audio/harpa-2.mp3" }, // [PLACEHOLDER]
-    { id: "criancas-1", categoria: "Crianças", titulo: "Deus É Tão Bom", arquivoAudio: "/assets/audio/criancas-1.mp3" }, // [PLACEHOLDER]
+    { id: "harpa-1", categoria: "Harpa", titulo: "Cristo, o Fiel Amigo", arquivoAudio: "/assets/audio/harpa-1.mp3", capa: "/assets/img/harpa-1-capa.jpeg" },
+    { id: "harpa-2", categoria: "Harpa", titulo: "O Bondoso Amigo", arquivoAudio: "/assets/audio/harpa-2.mp3", capa: "/assets/img/harpa-2-capa.jpeg" },
+    { id: "harpa-3", categoria: "Harpa", titulo: "A Teus Pés", arquivoAudio: "/assets/audio/harpa-3.mp3", capa: "/assets/img/harpa-3-capa.jpg" },
+    { id: "criancas-1", categoria: "Crianças", titulo: "Restaurados", arquivoAudio: "/assets/audio/criancas-1.mp3", capa: "/assets/img/criancas-1-capa.avif" },
     { id: "irmas-1", categoria: "Irmãs", titulo: "Amor de Deus", arquivoAudio: "/assets/audio/irmas-1.mp3", capa: "/assets/img/irmas-1-capa.png" },
-    { id: "jovens-1", categoria: "Jovens e Adolescentes", titulo: "Digno É o Senhor", arquivoAudio: "/assets/audio/jovens-1.mp3" }, // [PLACEHOLDER]
-    { id: "coral-1", categoria: "Coral", titulo: "Aleluia, Grande É o Senhor", arquivoAudio: "/assets/audio/coral-1.mp3" }, // [PLACEHOLDER]
+    { id: "jovens-1", categoria: "Jovens e Adolescentes", titulo: "Redentor", arquivoAudio: "/assets/audio/jovens-1.mp3", capa: "/assets/img/jovens-1-capa.jpeg" },
+    { id: "coral-1", categoria: "Coral", titulo: "O Melhor Lugar do Mundo é Aos Pés do Salvador", arquivoAudio: "/assets/audio/coral-1.mp3", capa: "/assets/img/coral-1-capa.jpg" },
   ],
 };
 
