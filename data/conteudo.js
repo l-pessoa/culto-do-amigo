@@ -129,6 +129,13 @@ export const conteudo = {
         "Restaurados no amor de Cristo", "Então, curados", "Não queremos mais estar quebrados", "Se por Ele somos nós transformados", "",
         "Eu sou uma obra de arte", "Planejado em cada detalhe", "Me refez com tanto amor", "À Sua imagem eu sou",
       ],
+      tempos: [
+        16.95, 20.43, 23.97, 27.12, 30.46, 33.58, 36.97, 42.1, 44.28, 48.65,
+        50.4, 55.39, 58.84, 61.18, 64.27, 68.85, 71.96, 74.24, 78.18, 85.93,
+        88.8, 92.16, 95.25, 100.32, 105.27, 106.64, 108.66, 111.92, 113.82, 116.65,
+        119.38, 122.62, 127.17, 129.73, 132.84, 135.96, 140.47, 144.03, 145.99, 149.02,
+        153.81, 157.21, 159.52, 162.61, 167.63, 170.29, 173.85, 176.88, 180.35, // última linha estimada
+      ],
     },
     {
       id: "irmas-1",
