@@ -215,43 +215,6 @@ main.container { position: relative; overflow: hidden; }
   }
 }
 
-/* ---------- home: one section per scroll ----------
-   `main` (not body/html, whose scrolling-element behavior is
-   inconsistent across browsers) is the explicit scroll container, so
-   the snap is guaranteed to actually engage. Only min-height +
-   scroll-snap-align change here — deliberately NOT touching display,
-   so nothing inside (the Louvores carousel included) gets reflowed. */
-body[data-page="index"] {
-  height: 100dvh;
-  overflow: hidden;
-}
-body[data-page="index"] main {
-  height: calc(100dvh - var(--header-height));
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-body[data-page="index"] .hero,
-body[data-page="index"] main > .section {
-  scroll-snap-align: start;
-  min-height: 100%;
-}
-body[data-page="index"] .site-footer {
-  scroll-snap-align: start;
-}
-@media (prefers-reduced-motion: reduce) {
-  body[data-page="index"] {
-    height: auto;
-    overflow: visible;
-  }
-  body[data-page="index"] main {
-    height: auto;
-    overflow-y: visible;
-    scroll-snap-type: none;
-  }
-}
-
 /* ---------- hero (home) ---------- */
 .hero {
   background: transparent;
@@ -930,9 +893,9 @@ body[data-page="index"] .site-footer {
 .reveal,
 .reveal-child {
   opacity: 0;
-  transform: translateY(34px) scale(.97);
-  filter: blur(5px);
-  transition: opacity .8s cubic-bezier(.2,.7,.3,1), transform .8s cubic-bezier(.2,.7,.3,1), filter .8s ease;
+  transform: translateY(56px) scale(.92);
+  filter: blur(9px);
+  transition: opacity .9s cubic-bezier(.2,.7,.3,1), transform .9s cubic-bezier(.2,.7,.3,1), filter .9s ease;
 }
 .reveal.is-visible,
 .reveal.is-visible.reveal-child,
@@ -947,6 +910,11 @@ body[data-page="index"] .site-footer {
 .reveal.is-visible .reveal-child:nth-child(4) { transition-delay: .48s; }
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-child { opacity: 1; transform: none; filter: none; transition: none; }
+}
+/* safety net: if reveal.js never runs (scripting disabled/blocked),
+   content must still show up instead of staying invisible forever */
+@media (scripting: none) {
+  .reveal, .reveal-child { opacity: 1; transform: none; filter: none; }
 }
 .section-head {
   position: relative;
