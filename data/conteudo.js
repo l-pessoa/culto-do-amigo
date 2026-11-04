@@ -157,6 +157,13 @@ export const conteudo = {
         "Logo eu, um pobre pecador", "Logo eu, tão fraco e tão devedor", "Logo eu, de graça recebi o amor de Deus (o amor de Deus)", "",
         "Logo eu, finito e carnal", "Logo eu, diante de um Deus imortal", "Logo eu, de graça recebi o amor de Deus (o amor de Deus)", "O amor de Deus (amor de Deus)",
       ],
+      tempos: [
+        20.43, 26.17, 30.32, 37.56, 43.34, 49.11, 53.96, 59.89, 65.14, 70.88,
+        82.37, 88.04, 94.3, 99.23, 112.03, 117.72, 122.01, 129.19, 134.95, 140.62,
+        144.96, 155.23, 156.48, 162.4, 170.64, 173.36, 177.31, 185.75, 197.04, 201.99,
+        207.57, 214.09, 219.04, 224.8, 230.7, 236.67, 248.46, 254.2, 259.64, 271.15,
+        276.66, 282.5, 293.56, 298.9, // última linha estimada (tag curto final)
+      ],
     },
     {
       id: "jovens-1",
