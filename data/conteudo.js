@@ -191,7 +191,23 @@ export const conteudo = {
         "Mas ao", "Terceiro dia", "Ele ressuscitou", "",
         "A culpa", "Que era minha", "Ele, em si, levou", "",
         "Redentor", "Teu amor me libertou", "De mim e agora vivo", "",
-        "Redentor", "Teu amor me libertou", "De mim e agora vivo", "Enfim!",
+        "Redentor", "Teu amor me libertou", "De mim e agora vivo", "",
+        "Redentor", "Teu amor me libertou", "De mim e agora vivo", "",
+        "Redentor", "Teu amor me libertou", "De mim e agora vivo, Enfim!", "",
+        "Ooh ooh ooh", "Ooh ooh ooh",
+      ],
+      tempos: [
+        19.42, 25.14, 27.72, 32.08, 33.82, 39.25, 40.95, 45.7, 50.08, 55.15,
+        59.85, 63.7, 67.64, 73.56, 79.11, 102.28, 106.35, 111.04, 112.98, 117.8,
+        120.53, 125.11, 128.88, 134.07, 138.78, 142.55, 149.39, 153.25, 157.74, 163.92,
+        170.28, 172.11, 177.42, 181.39, 185.19, 206.44, 209.6, 213.04, 216.81, 217.7,
+        220.16, 223.87, 227.51, 229, 231.17, 234.65, 235.78, 238.36, 241.87, 243.4,
+        245.58, 249.08, 250.26, 252.72, 255.99, 258.68, 259.98, 263.77,
+        267.51, 271.47, 277.77, // Redentor / Teu amor me libertou / De mim e agora vivo (repetição 1, marcada)
+        281.77, 288.47, 291.42, // repetição 2, marcada
+        295.42, 299.38, 305.68, // repetição 3, estimada repetindo o intervalo da repetição 1
+        309.68, 316.38, 319.33, // repetição 4 + "Enfim!", estimada repetindo o intervalo da repetição 2
+        324.88, 330.43, // Ooh ooh ooh x2, estimado
       ],
     },
     {
