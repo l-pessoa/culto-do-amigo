@@ -58,6 +58,13 @@ export const conteudo = {
         "Nele nós temos um firme guia", "Nele só, Nele só", "A noite enche de alegria", "Ele só, Ele só", "",
         "E nas lutas de cada dia", "Cristo nunca me deixa só", "Pois Ele é meu seguro guia", "Ele só, Ele só",
       ],
+      tempos: [
+        16.08, 21.32, 26.88, 32.34, 37.84, 43.32, 48.84, 54.04, 59.71, 63.64,
+        65.45, 70.68, 73.54, 76.15, 81.52, 87.24, 92.16, 98.08, 103.39, 108.84,
+        114.35, 119.77, 125.19, 130.86, 136.1, 141.34, 147.08, 152.23, 158.26, 163.3,
+        168.7, 174.76, 179.77, 185.32, 190.96, 196.16, 201.74, 207.08, 213.08, 218.24,
+        223.55, 229.03, // última linha estimada pelo padrão das 4 repetições anteriores do refrão
+      ],
     },
     {
       id: "harpa-2",
