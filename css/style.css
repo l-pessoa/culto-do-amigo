@@ -102,6 +102,56 @@ main.container { position: relative; overflow: hidden; }
   flex-shrink: 0;
 }
 .main-nav { display: flex; align-items: center; gap: var(--space-2); }
+
+/* ---------- PWA: botão de instalar + aviso iOS ---------- */
+.install-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-inline: var(--space-3);
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: rgba(240,196,138,0.12);
+  border: 1px solid var(--border-soft);
+  color: var(--color-gold);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  transition: background-color .18s ease, transform .15s ease;
+}
+.install-btn:hover { background: rgba(240,196,138,0.22); }
+.install-btn:active { transform: scale(.95); }
+.install-btn span { white-space: nowrap; }
+@media (max-width: 360px) {
+  .install-btn span { display: none; }
+  .install-btn { padding-inline: 0; width: 36px; justify-content: center; }
+}
+
+.ios-install-hint {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-4);
+  background: rgba(0,0,0,.55);
+  animation: ios-hint-fade .2s ease;
+}
+@keyframes ios-hint-fade { from { opacity: 0; } to { opacity: 1; } }
+.ios-install-hint__card {
+  max-width: 360px;
+  width: 100%;
+  background: linear-gradient(165deg, var(--color-ink-2), var(--bg-panel-dark) 65%);
+  border: 2px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--color-cream);
+  box-shadow: 0 -10px 30px rgba(0,0,0,.4);
+}
+.ios-install-hint__card p { margin-bottom: var(--space-4); line-height: 1.6; }
+.ios-install-hint__card .icon { display: inline-block; vertical-align: middle; margin-inline: 2px; color: var(--color-gold); }
 .nav-toggle {
   display: flex;
   align-items: center;
@@ -775,6 +825,62 @@ body[data-page="index"] .site-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* ---------- teaching (tema: reflexão em passos sobre o versículo) ---------- */
+.teaching {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-soft);
+}
+.teaching__heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  color: var(--color-gold);
+  text-align: center;
+}
+.teaching-steps {
+  position: relative;
+  max-width: 540px;
+  margin-inline: auto;
+  padding-left: var(--space-6);
+}
+.teaching-steps::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-gold), rgba(240,196,138,.1));
+}
+.teaching-step {
+  position: relative;
+  padding-bottom: var(--space-6);
+}
+.teaching-step:last-child { padding-bottom: 0; }
+.teaching-step__marker {
+  position: absolute;
+  left: calc(-1 * var(--space-6) + 1px);
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-page);
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 0 4px var(--bg-page);
+}
+.teaching-step__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h4);
+  color: var(--color-gold);
+  margin-bottom: var(--space-2);
+}
+.teaching-step__text {
+  color: var(--text-muted);
+  line-height: 1.7;
 }
 
 /* ---------- ticket block (convite: address + actions as an event ticket) ---------- */

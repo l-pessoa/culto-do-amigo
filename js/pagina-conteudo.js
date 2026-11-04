@@ -16,6 +16,21 @@ if (page === "tema") {
   setText("tema-versiculo", `"${conteudo.lema.versiculo}"`);
   setText("tema-referencia", conteudo.lema.referencia);
   setText("tema-frase", conteudo.lema.fraseEfeito);
+  setText("tema-ensino-heading", conteudo.lema.ensinoTitulo);
+
+  const stepsEl = document.getElementById("tema-ensino-steps");
+  if (stepsEl && Array.isArray(conteudo.lema.ensino)) {
+    stepsEl.innerHTML = conteudo.lema.ensino
+      .map(
+        (passo) => `
+          <div class="teaching-step reveal-child">
+            <span class="teaching-step__marker" aria-hidden="true"></span>
+            <p class="teaching-step__label">${passo.rotulo}</p>
+            <p class="teaching-step__text">${passo.texto}</p>
+          </div>`
+      )
+      .join("");
+  }
 }
 
 if (page === "pregacao") {

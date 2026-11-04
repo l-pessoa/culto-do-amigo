@@ -6,6 +6,10 @@
   <title>Lema — Culto do Amigo</title>
   <meta name="description" content="O lema do Culto do Amigo: Jesus, Melhor Amigo.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/assets/icons/icon-32.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#15110B">
 </head>
 <body data-page="tema">
 
@@ -56,6 +60,13 @@
     </div>
 
     <p class="ribbon-quote reveal" id="tema-frase"></p>
+
+    <section class="teaching reveal" aria-labelledby="tema-ensino-heading">
+      <div class="section-head reveal-child">
+        <h2 class="teaching__heading" id="tema-ensino-heading"></h2>
+      </div>
+      <div class="teaching-steps" id="tema-ensino-steps"></div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -63,6 +74,7 @@
   </footer>
 
   <script src="js/nav.js" defer></script>
+  <script src="js/pwa.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script type="module" src="js/pagina-conteudo.js"></script>
 </body>

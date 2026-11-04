@@ -21,6 +21,29 @@ export const conteudo = {
     referencia: "João 15:15",
     fraseEfeito:
       "Um amigo que não muda, mesmo quando tudo muda ao redor.",
+    ensinoTitulo: "O que esse versículo ensina",
+    ensino: [
+      {
+        rotulo: "O contraste",
+        texto:
+          "Servo é quem obedece sem saber o porquê. Amigo é quem é incluído no plano. Jesus diz que já não nos trata como quem só cumpre ordens — Ele quer alguém com quem possa compartilhar o que pensa, o que planeja, o que sente.",
+      },
+      {
+        rotulo: "O convite",
+        texto:
+          "Essa amizade não foi conquistada, foi oferecida. Jesus escolheu primeiro. A aproximação começou do lado d'Ele, não do nosso.",
+      },
+      {
+        rotulo: "O custo",
+        texto:
+          "“Ninguém tem maior amor do que este: de dar a sua vida pelos seus amigos” (João 15:13) — a frase logo antes da nossa. Jesus define essa amizade pelo tamanho do que Ele estava disposto a entregar por ela.",
+      },
+      {
+        rotulo: "Por isso, Culto do Amigo",
+        texto:
+          "Não é sobre trazer alguém pra conhecer regras. É sobre apresentar um Deus que não quer obediência à distância — quer amizade de verdade. Esse é o convite de hoje.",
+      },
+    ],
   },
 
   pregacao: {
