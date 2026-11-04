@@ -36,7 +36,9 @@ function renderPlayer(hino) {
         </div>
         <div class="player-controls">
           <button type="button" id="player-prev" aria-label="Hino anterior">${iconPrev()}</button>
+          <button type="button" id="player-rewind" aria-label="Voltar 10 segundos">${iconRewind10()}</button>
           <button type="button" id="player-play" class="play-pause" aria-label="Tocar">${iconPlay()}</button>
+          <button type="button" id="player-forward" aria-label="Avançar 10 segundos">${iconForward10()}</button>
           <button type="button" id="player-next" aria-label="Próximo hino">${iconNext()}</button>
         </div>
       </div>
@@ -55,6 +57,8 @@ function renderPlayer(hino) {
   const audioArea = document.getElementById("player-audio-area");
   const prevBtn = document.getElementById("player-prev");
   const nextBtn = document.getElementById("player-next");
+  const rewindBtn = document.getElementById("player-rewind");
+  const forwardBtn = document.getElementById("player-forward");
 
   const prevHino = conteudo.hinos[index - 1];
   const nextHino = conteudo.hinos[index + 1];
@@ -73,6 +77,13 @@ function renderPlayer(hino) {
   playBtn.addEventListener("click", () => {
     if (audio.paused) audio.play().catch(() => {});
     else audio.pause();
+  });
+
+  rewindBtn.addEventListener("click", () => {
+    audio.currentTime = Math.max(0, audio.currentTime - 10);
+  });
+  forwardBtn.addEventListener("click", () => {
+    audio.currentTime = Math.min(audio.duration || audio.currentTime + 10, audio.currentTime + 10);
   });
 
   audio.addEventListener("play", () => {
@@ -164,4 +175,18 @@ function iconPrev() {
 }
 function iconNext() {
   return `<svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 5v14l11-7z"/><rect x="18" y="5" width="2" height="14"/></svg>`;
+}
+function iconRewind10() {
+  return `<svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 4.5 4.5 7.5 8 10.5"/>
+    <path d="M4.5 7.5a8 8 0 1 1 -2.2 7.9"/>
+    <text x="12.5" y="17" font-size="7.5" font-weight="700" stroke="none" fill="currentColor" text-anchor="middle" font-family="inherit">10</text>
+  </svg>`;
+}
+function iconForward10() {
+  return `<svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M16 4.5 19.5 7.5 16 10.5"/>
+    <path d="M19.5 7.5a8 8 0 1 0 2.2 7.9"/>
+    <text x="11.5" y="17" font-size="7.5" font-weight="700" stroke="none" fill="currentColor" text-anchor="middle" font-family="inherit">10</text>
+  </svg>`;
 }

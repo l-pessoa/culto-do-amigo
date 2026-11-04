@@ -1052,7 +1052,10 @@ main.container { position: relative; overflow: hidden; }
 .player-controls {
   display: flex;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-3);
+}
+@media (min-width: 420px) {
+  .player-controls { gap: var(--space-4); }
 }
 .player-controls button {
   display: flex;
