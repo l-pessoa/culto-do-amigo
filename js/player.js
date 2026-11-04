@@ -43,6 +43,7 @@ function renderPlayer(hino) {
         </div>
       </div>
     </div>
+    ${letraHtml(hino)}
     ${upNextHtml(hino)}
     <audio id="player-audio" src="${hino.arquivoAudio}" preload="none"></audio>
   `;
@@ -59,6 +60,11 @@ function renderPlayer(hino) {
   const nextBtn = document.getElementById("player-next");
   const rewindBtn = document.getElementById("player-rewind");
   const forwardBtn = document.getElementById("player-forward");
+  const lyricsBody = document.getElementById("lyrics-body");
+  const lyricsLines = lyricsBody
+    ? Array.from(lyricsBody.querySelectorAll(".lyrics-line"))
+    : [];
+  let currentLyricIndex = -1;
 
   const prevHino = conteudo.hinos[index - 1];
   const nextHino = conteudo.hinos[index + 1];
@@ -109,7 +115,23 @@ function renderPlayer(hino) {
     const pct = (audio.currentTime / audio.duration) * 100;
     scrubberFill.style.width = `${pct}%`;
     timeCurrent.textContent = formatTime(audio.currentTime);
+    updateLyrics(audio.currentTime / audio.duration);
   });
+
+  function updateLyrics(progress) {
+    if (lyricsLines.length === 0) return;
+    const index = Math.min(
+      lyricsLines.length - 1,
+      Math.floor(progress * lyricsLines.length)
+    );
+    if (index === currentLyricIndex) return;
+    currentLyricIndex = index;
+    lyricsLines.forEach((line, i) => {
+      line.classList.toggle("is-current", i === index);
+      line.classList.toggle("is-past", i < index);
+    });
+    lyricsLines[index].scrollIntoView({ block: "center", behavior: "smooth" });
+  }
 
   audio.addEventListener("loadedmetadata", () => {
     timeDuration.textContent = formatTime(audio.duration);
@@ -125,6 +147,31 @@ function renderPlayer(hino) {
   audio.addEventListener("error", () => {
     audioArea.innerHTML = `<p class="player-unavailable">Áudio ainda não disponível para este hino.</p>`;
   });
+}
+
+function letraHtml(hino) {
+  if (!hino.letra || hino.letra.length === 0) return "";
+
+  const lines = hino.letra
+    .map((line) =>
+      line === ""
+        ? `<div class="lyrics-line-break" aria-hidden="true"></div>`
+        : `<p class="lyrics-line">${escapeHtml(line)}</p>`
+    )
+    .join("");
+
+  return `
+    <div class="lyrics-card">
+      <p class="lyrics-card__title">Letra</p>
+      <div class="lyrics-body" id="lyrics-body">${lines}</div>
+    </div>`;
+}
+
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 function upNextHtml(current) {

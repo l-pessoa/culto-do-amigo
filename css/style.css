@@ -1165,6 +1165,69 @@ body[data-page="index"] .site-footer {
 }
 .up-next .playlist-card { padding-block: var(--space-4) var(--space-3); }
 
+/* ---------- lyrics (player: letra acompanhando o hino) ---------- */
+.lyrics-card {
+  position: relative;
+  width: 100%;
+  margin-top: var(--space-2);
+  background: linear-gradient(165deg, var(--color-ink-2), var(--bg-panel-dark) 65%);
+  border: 3px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  box-shadow: 0 10px 30px rgba(26,26,20,.25);
+  overflow: hidden;
+}
+.lyrics-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(240,196,138,0.1) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.lyrics-card__title {
+  position: relative;
+  color: var(--color-gold);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: var(--fs-h3);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+.lyrics-body {
+  position: relative;
+  max-height: min(48vh, 360px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-inline: var(--space-2);
+  mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
+}
+.lyrics-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  text-align: center;
+  color: var(--text-on-dark-muted);
+  padding-block: 3px;
+  transition: color .4s ease, transform .4s ease, text-shadow .4s ease;
+}
+.lyrics-line.is-past { color: var(--color-cream); }
+.lyrics-line.is-current {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-style: normal;
+  transform: scale(1.06);
+  text-shadow: 0 0 18px rgba(240,196,138,.4);
+}
+.lyrics-line-break { height: var(--space-4); }
+@media (prefers-reduced-motion: reduce) {
+  .lyrics-line { transition: color .2s ease; }
+  .lyrics-line.is-current { transform: none; }
+}
+
 /* ---------- convite ---------- */
 .endereco-text {
   color: var(--text-muted);
