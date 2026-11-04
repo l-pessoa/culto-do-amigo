@@ -1,15 +1,12 @@
 // Conteúdo central do site. Todo HTML/JS de apresentação lê daqui —
 // nunca hardcode texto de conteúdo direto no markup.
-//
-// Placeholders marcados com [PLACEHOLDER] ainda não têm dado real
-// confirmado — o endereço da igreja é o único que resta.
 
 export const conteudo = {
   igreja: {
     nome: "AEC",
-    endereco: "Rua Exemplo, 123 – Centro, Sua Cidade – UF", // [PLACEHOLDER]
+    endereco: "Av. Águia de Haia, 1658 – Artur Alvim, São Paulo – SP, 03694-000",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=" +
-      encodeURIComponent("Rua Exemplo, 123 – Centro, Sua Cidade – UF"),
+      encodeURIComponent("Av. Águia de Haia, 1658 – Artur Alvim, São Paulo – SP, 03694-000"),
   },
 
   home: {
