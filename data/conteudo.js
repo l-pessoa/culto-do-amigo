@@ -102,6 +102,12 @@ export const conteudo = {
         "A Teus pés, ó, Jesus Cristo", "Tenho um gozo divinal", "A Teus pés encontro abrigo", "Oh, bondoso Salvador",
         "Só em Ti, ó, Jesus Cristo", "Há consolo sem igual", "Para minha alma abatida", "Neste mundo de horror",
       ],
+      tempos: [
+        16.23, 21.75, 27.1, 32.2, 38.24, 43.48, 49.21, 54.47, 59.96, 65.77,
+        70.87, 76.43, 81.79, 87.16, 92.82, 97.8, 103.75, 108.96, 114.64, 120.11,
+        125.6, 130.9, 136.47, 141.33, 147.25, 152.86, 158.32, 163.64, 169.11, 174.63,
+        180.07, 185.53, // última linha estimada pelo intervalo médio do hino (~5,46s)
+      ],
     },
     {
       id: "criancas-1",
