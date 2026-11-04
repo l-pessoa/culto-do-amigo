@@ -80,6 +80,11 @@ export const conteudo = {
         "Cristo é verdadeiro amigo", "Disto provas nos mostrou", "Quando pra levar consigo", "O culpado encarnou", "",
         "Derramou Seu sangue puro", "Nossas manchas pra lavar", "Gozo em vida e no futuro", "Nele podemos alcançar",
       ],
+      tempos: [
+        18.08, 23.67, 29.74, 35.52, 41.36, 47.39, 53.33, 59.02, 64.65, 70.59,
+        76.71, 82.38, 89.12, 94.32, 100.07, 106.09, 112.77, 118.72, 123.56, 129.45,
+        135.05, 141.1, 146.78, 152.63, // última linha estimada pelo intervalo médio do hino (~5,85s)
+      ],
     },
     {
       id: "harpa-3",
