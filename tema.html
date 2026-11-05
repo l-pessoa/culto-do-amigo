@@ -17,10 +17,6 @@
     <div class="header-inner">
       <a href="index.html" class="logo">AEC</a>
       <nav class="main-nav" aria-label="Navegação principal">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
-          <span class="sr-only">Abrir menu</span>
-          <span class="nav-toggle-bars" aria-hidden="true"></span>
-        </button>
         <ul id="nav-list" class="nav-list">
           <li><a href="index.html" data-page="index">Home</a></li>
           <li><a href="louvores.html" data-page="louvores">Louvores</a></li>
@@ -72,6 +68,29 @@
   <footer class="site-footer">
     <p>AEC — Culto do Amigo</p>
   </footer>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <a href="index.html" data-page="index" class="bottom-nav__item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+      <span>Início</span>
+    </a>
+    <a href="louvores.html" data-page="louvores" class="bottom-nav__item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"/></svg>
+      <span>Louvores</span>
+    </a>
+    <a href="tema.html" data-page="tema" class="bottom-nav__item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5.5"/><path d="M12 9v6M9 12h6"/></svg>
+      <span>Lema</span>
+    </a>
+    <a href="pregacao.html" data-page="pregacao" class="bottom-nav__item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6c3-1.5 5-1.5 8 .5v11c-3-2-5-2-8-.5z"/><path d="M20 6c-3-1.5-5-1.5-8 .5v11c3-2 5-2 8-.5z"/></svg>
+      <span>Pregação</span>
+    </a>
+    <a href="convite.html" data-page="convite" class="bottom-nav__item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.35-9.5-8.5C.8 8 2 4.5 5.5 4c2-.3 3.8.7 4.5 2.3C10.7 4.7 12.5 3.7 14.5 4c3.5.5 4.7 4 3 7.5C19.5 15.65 12 20 12 20z"/></svg>
+      <span>Convite</span>
+    </a>
+  </nav>
 
   <script src="js/nav.js" defer></script>
   <script src="js/pwa.js" defer></script>

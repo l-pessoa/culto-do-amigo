@@ -1,6 +1,6 @@
 // Bump this whenever css/js/html change in a way that must reach users
 // right away — it busts the precache and drops old runtime entries.
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const SHELL_CACHE = `culto-amigo-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `culto-amigo-runtime-${CACHE_VERSION}`;
 
