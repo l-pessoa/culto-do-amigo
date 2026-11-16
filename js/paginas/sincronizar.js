@@ -1,4 +1,4 @@
-import { conteudo } from "../data/conteudo.js";
+import { conteudo } from "../../data/conteudo.js";
 
 const root = document.getElementById("sync-root");
 const hinosComLetra = conteudo.hinos.filter((h) => h.letra && h.letra.length > 0);

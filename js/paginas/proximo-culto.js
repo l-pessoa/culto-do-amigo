@@ -1,7 +1,7 @@
 // Cartão "Próximo culto" (Home e Volte sempre): calcula sozinho o próximo culto a partir de
 // conteudo.convite.horarios e oferece um arquivo .ics para adicionar os cultos à agenda.
 // Tudo em horário de Brasília (UTC-3, sem horário de verão), qualquer que seja o fuso do aparelho.
-import { conteudo } from "../data/conteudo.js";
+import { conteudo } from "../../data/conteudo.js";
 
 const BRT_MS = 3 * 60 * 60 * 1000;
 const DIA_MS = 24 * 60 * 60 * 1000;

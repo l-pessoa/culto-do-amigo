@@ -131,7 +131,7 @@ export const conteudo = {
       categoria: "Harpa",
       titulo: "Cristo, o Fiel Amigo",
       arquivoAudio: "/assets/audio/harpa-1.mp3",
-      capa: "/assets/img/harpa-1-capa.jpeg",
+      capa: "/assets/img/capas/harpa-1-capa.jpeg",
       letra: [
         "Cristo Jesus é fiel amigo", "Ele só, Ele só", "E nas fraquezas está comigo", "Ele só, Ele só", "",
         "E nas lutas de cada dia", "Cristo nunca me deixa só", "Pois Ele é meu seguro guia", "Ele só, Ele só", "",
@@ -158,7 +158,7 @@ export const conteudo = {
       categoria: "Harpa",
       titulo: "O Bondoso Amigo",
       arquivoAudio: "/assets/audio/harpa-2.mp3",
-      capa: "/assets/img/harpa-2-capa.jpeg",
+      capa: "/assets/img/capas/harpa-2-capa.jpeg",
       letra: [
         "Quão bondoso amigo é Cristo!", "Carregou com a nossa dor", "E nos manda que levemos", "Os cuidados ao Senhor", "",
         "Falta ao coração dorido", "Gozo, paz, consolação?", "Isso é porque não levamos", "Tudo a Deus em oração", "",
@@ -179,7 +179,7 @@ export const conteudo = {
       categoria: "Harpa",
       titulo: "A Teus Pés",
       arquivoAudio: "/assets/audio/harpa-3.mp3",
-      capa: "/assets/img/harpa-3-capa.jpg",
+      capa: "/assets/img/capas/harpa-3-capa.jpg",
       letra: [
         "A Teus pés, ó, Jesus Cristo", "Tua face buscarei", "Escutando qual Maria", "As palavras de amor",
         "A Teus pés, ó, Jesus Cristo", "Meu passado esquecerei", "Pois Tua mão fiel e terna", "Tem-me salvo do temor", "",
@@ -203,7 +203,7 @@ export const conteudo = {
       categoria: "Crianças",
       titulo: "Restaurados",
       arquivoAudio: "/assets/audio/criancas-1.mp3",
-      capa: "/assets/img/criancas-1-capa.avif",
+      capa: "/assets/img/capas/criancas-1-capa.avif",
       letra: [
         "Eu sou uma obra de arte", "Planejado em cada detalhe", "Deus me fez com tanto amor", "À Sua imagem eu sou", "",
         "Eu sou uma obra de arte", "Planejado em cada detalhe", "Deus me fez com tanto amor", "À Sua imagem eu sou", "",
@@ -232,7 +232,7 @@ export const conteudo = {
       categoria: "Irmãs",
       titulo: "Amor de Deus",
       arquivoAudio: "/assets/audio/irmas-1.mp3",
-      capa: "/assets/img/irmas-1-capa.png",
+      capa: "/assets/img/capas/irmas-1-capa.png",
       letra: [
         "Graça sobre graça, recebi", "E da plenitude, renasci", "Quando atraído, me encontrei", "No amor de Deus", "",
         "Viva e poderosa salvação", "Luz que me alcançou na escuridão", "Todo meu pecado se apagou", "No amor de Deus", "",
@@ -261,7 +261,7 @@ export const conteudo = {
       categoria: "Jovens e Adolescentes",
       titulo: "Redentor",
       arquivoAudio: "/assets/audio/jovens-1.mp3",
-      capa: "/assets/img/jovens-1-capa.jpeg",
+      capa: "/assets/img/capas/jovens-1-capa.jpeg",
       letra: [
         "Desde o ventre", "Me conheces", "Tu me escolhestes", "Para ti", "",
         "Com moedas de", "Prata te vendi", "E mesmo assim se", "Entregou por mim", "",
@@ -304,7 +304,7 @@ export const conteudo = {
       categoria: "Coral",
       titulo: "O Melhor Lugar do Mundo é Aos Pés do Salvador",
       arquivoAudio: "/assets/audio/coral-1.mp3",
-      capa: "/assets/img/coral-1-capa.jpg",
+      capa: "/assets/img/capas/coral-1-capa.jpg",
       letra: [
         "No mundo ainda existem belezas",
         "Que alegram a vida e nos fazem sonhar",

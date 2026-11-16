@@ -1,6 +1,6 @@
 // Carrosséis de fotos da página "Volte sempre".
 // CSS scroll-snap + botões, teclado, indicadores. Sem bibliotecas.
-import { conteudo } from "../data/conteudo.js";
+import { conteudo } from "../../data/conteudo.js";
 
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)");
 const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));

@@ -1,6 +1,6 @@
 // Bump this whenever css/js/html change in a way that must reach users
 // right away — it busts the precache and drops old runtime entries.
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v4";
 const SHELL_CACHE = `culto-amigo-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `culto-amigo-runtime-${CACHE_VERSION}`;
 
@@ -13,21 +13,21 @@ const SHELL_FILES = [
   "/convite.html",
   "/css/style.css",
   "/css/tokens.css",
-  "/css/convite.css",
-  "/css/proximo-culto.css",
-  "/js/proximo-culto.js",
-  "/css/pregacao.css",
+  "/css/paginas/convite.css",
+  "/css/paginas/proximo-culto.css",
+  "/js/paginas/proximo-culto.js",
+  "/css/paginas/pregacao.css",
   "/data/conteudo.js",
-  "/js/nav.js",
-  "/js/reveal.js",
-  "/js/home.js",
-  "/js/louvores.js",
-  "/js/player.js",
-  "/js/pagina-conteudo.js",
-  "/js/pregacao-compartilhar.js",
-  "/js/convite-carrossel.js",
-  "/js/disc.js",
-  "/js/pwa.js",
+  "/js/nucleo/nav.js",
+  "/js/nucleo/reveal.js",
+  "/js/paginas/home.js",
+  "/js/paginas/louvores.js",
+  "/js/paginas/player.js",
+  "/js/paginas/pagina-conteudo.js",
+  "/js/paginas/pregacao-compartilhar.js",
+  "/js/paginas/convite-carrossel.js",
+  "/js/nucleo/disc.js",
+  "/js/nucleo/pwa.js",
   "/manifest.webmanifest",
 ];
 

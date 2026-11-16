@@ -1,4 +1,4 @@
-import { conteudo } from "../data/conteudo.js";
+import { conteudo } from "../../data/conteudo.js";
 
 const { versiculo, referencia } = conteudo.pregacao;
 

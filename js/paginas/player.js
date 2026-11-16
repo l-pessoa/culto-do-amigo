@@ -1,5 +1,5 @@
-import { conteudo } from "../data/conteudo.js";
-import { discCoverHtml } from "./disc.js";
+import { conteudo } from "../../data/conteudo.js";
+import { discCoverHtml } from "../nucleo/disc.js";
 
 const params = new URLSearchParams(location.search);
 const hinoId = params.get("hino");

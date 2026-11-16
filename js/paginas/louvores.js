@@ -1,5 +1,5 @@
-import { conteudo, CATEGORIAS_ORDEM } from "../data/conteudo.js";
-import { discCoverHtml } from "./disc.js";
+import { conteudo, CATEGORIAS_ORDEM } from "../../data/conteudo.js";
+import { discCoverHtml } from "../nucleo/disc.js";
 
 const ICON_PLAY = `<svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>`;
 

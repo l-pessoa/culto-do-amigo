@@ -1,4 +1,4 @@
-import { conteudo } from "../data/conteudo.js";
+import { conteudo } from "../../data/conteudo.js";
 
 function setText(id, value) {
   const el = document.getElementById(id);

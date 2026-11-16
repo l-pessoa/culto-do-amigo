@@ -1,5 +1,5 @@
-import { conteudo, CATEGORIAS_ORDEM } from "../data/conteudo.js";
-import { discCoverHtml } from "./disc.js";
+import { conteudo, CATEGORIAS_ORDEM } from "../../data/conteudo.js";
+import { discCoverHtml } from "../nucleo/disc.js";
 
 function slugify(text) {
   return text
