@@ -23,7 +23,8 @@ function montar(raiz) {
           .map(
             (f, i) => `
           <figure class="carrossel__slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${fotos.length}">
-            <img src="${esc(f.src)}" alt="${esc(f.alt)}" width="1280" height="960" loading="${i === 0 ? "eager" : "lazy"}" decoding="async" draggable="false">
+            <img class="carrossel__bg" src="${esc(f.src)}" alt="" aria-hidden="true" loading="lazy" decoding="async" draggable="false">
+            <img class="carrossel__foto" src="${esc(f.src)}" alt="${esc(f.alt)}" loading="${i === 0 ? "eager" : "lazy"}" decoding="async" draggable="false">
             ${f.legenda ? `<figcaption>${esc(f.legenda)}</figcaption>` : ""}
           </figure>`
           )

@@ -58,11 +58,11 @@ export const conteudo = {
   // ---------------------------------------------------------------------
   // PÁGINA "VOLTE SEMPRE" (convite.html) — convite pra voltar à congregação.
   //
-  // COMO TROCAR AS FOTOS: as imagens atuais são placeholders (SVG) em
-  // assets/img/convite/grupos/ e assets/img/convite/igreja/. Coloque as fotos
-  // reais nessas pastas (recomendado: WebP, até ~150 KB cada, ~1280px de
-  // largura, proporção 4:3) e troque `src`, `alt` e `legenda` abaixo.
-  // Pode ter quantas fotos quiser em cada carrossel.
+  // COMO TROCAR AS FOTOS: as imagens ficam em assets/img/convite/grupos/ e
+  // assets/img/convite/igreja/. Para acrescentar uma, converta para WebP
+  // (até ~150 KB, ~1280px de largura; qualquer proporção serve, a foto aparece
+  // inteira) e inclua uma linha {src, alt, legenda} no array. `legenda` pode
+  // ficar vazia; `alt` descreve a foto para leitores de tela.
   // ---------------------------------------------------------------------
   convite: {
     titulo: "Volte sempre",
@@ -78,18 +78,23 @@ export const conteudo = {
     gruposTitulo: "Nossos grupos",
     gruposSub: "Conheça os grupos que servem ao Senhor em nossa congregação.",
     grupos: [
-      { src: "assets/img/convite/grupos/grupo-1.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
-      { src: "assets/img/convite/grupos/grupo-2.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
-      { src: "assets/img/convite/grupos/grupo-3.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
-      { src: "assets/img/convite/grupos/grupo-4.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-01.webp", alt: "Grupo infantil Cânticos de Davi, de camiseta azul, reunido no salão da igreja", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-02.webp", alt: "Grupo Júbilo dos Fiéis, de roupas bege e preto, reunido para uma foto no salão", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-03.webp", alt: "Orquestra e coral da AEC reunidos para uma foto, com violinos, teclado e bateria", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-04.webp", alt: "Jovens e adolescentes de camiseta azul e branca diante do letreiro Átrios 2K24", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-05.webp", alt: "Irmãs de vestido marrom sentadas no salão da igreja", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-06.webp", alt: "Irmãs de vestido rosa reunidas sob o quadro Heroínas da Fé", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-07.webp", alt: "Irmãs de vestido azul-claro reunidas perto da entrada da igreja", legenda: "" },
     ],
     igrejaTitulo: "Nossa igreja e momentos",
     igrejaSub: "Momentos de comunhão, louvor e adoração em nossa congregação.",
     igreja: [
-      { src: "assets/img/convite/igreja/igreja-1.svg", alt: "Foto da igreja AEC (em breve)", legenda: "" },
-      { src: "assets/img/convite/igreja/igreja-2.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "" },
-      { src: "assets/img/convite/igreja/igreja-3.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "" },
-      { src: "assets/img/convite/igreja/igreja-4.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-01.webp", alt: "Irmãos com Bíblias e folhetos em evangelismo na calçada da igreja", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-02.webp", alt: "Irmãos em evangelismo de rua, com bumbo e trombone", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-03.webp", alt: "Encenação de Natal, com crianças vestidas de branco e o pregador ao microfone", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-04.webp", alt: "Crianças segurando certificados no evento Coroas, na igreja", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-05.webp", alt: "Ensaio da orquestra visto de cima, com a igreja cheia", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-06.webp", alt: "Irmãs de vestido azul sentadas no salão, vistas de cima", legenda: "" },
     ],
     mapaTitulo: "Como chegar",
     textoComoChegar: "Como chegar",

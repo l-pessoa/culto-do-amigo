@@ -95,7 +95,11 @@
 .carrossel__slide:nth-child(even) { --tilt: .6deg; }
 .carrossel__slide.is-active { opacity: 1; transform: scale(1) rotate(0); border-color: var(--color-gold); }
 .carrossel__slide.is-active:hover { transform: scale(1.015) rotate(0); }
-.carrossel__slide img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; user-select: none; }
+/* a foto aparece inteira (contain) sobre uma cópia desfocada dela mesma: serve qualquer proporção sem cortar rostos */
+.carrossel__slide { aspect-ratio: 4 / 3; display: flex; flex-direction: column; background: var(--color-ink); }
+.carrossel__slide img { user-select: none; }
+.carrossel__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(18px) brightness(.6); transform: scale(1.15); }
+.carrossel__foto { position: relative; display: block; flex: 1; min-height: 0; width: 100%; height: 100%; object-fit: contain; }
 .carrossel__slide figcaption {
   padding: var(--space-3) var(--space-4);
   font-family: var(--font-display);
