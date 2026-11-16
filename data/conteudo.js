@@ -49,10 +49,23 @@ export const conteudo = {
   },
 
   pregacao: {
-    titulo: "Versículo",
+    titulo: "Pregação",
+    tema: "As marcas do amor de Deus por nós",
+    pregador: "Pr. Flávio Lauton",
     versiculo:
-      "O amigo ama em todo o tempo e para a hora da angústia nasce o irmão.",
-    referencia: "Provérbios 17:17",
+      "Mas Deus prova o seu amor para conosco, em que Cristo morreu por nós, sendo nós ainda pecadores.",
+    referencia: "Romanos 5:8",
+    // Palavras-chave do esboço. Só aparecem nos balões, sem explicação: o
+    // desenvolvimento de cada ponto é feito na pregação.
+    marcas: [
+      "Incondicionalidade",
+      "Paciência",
+      "Cuidado constante",
+      "Sacrifício",
+      "Restaurador",
+      "Permanência",
+      "Acolhimento",
+    ],
   },
 
   // ---------------------------------------------------------------------

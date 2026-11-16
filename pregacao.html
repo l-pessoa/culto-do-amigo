@@ -6,6 +6,7 @@
   <title>Pregação — Culto do Amigo</title>
   <meta name="description" content="O versículo lido na pregação do Culto do Amigo.">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pregacao.css">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="/assets/icons/icon-32.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
@@ -47,14 +48,18 @@
       <span class="section-watermark" aria-hidden="true" id="pregacao-watermark"></span>
 
       <div class="section-head reveal">
-        <h1 class="script-title lg">Versículo</h1>
+        <p class="pregacao-eyebrow">Pregação</p>
+        <h1 class="script-title pregacao-tema" id="pregacao-tema"></h1>
+        <p class="pregacao-pregador" id="pregacao-pregador"></p>
       </div>
 
-      <div class="paper-block content-narrow reveal">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="verse" id="pregacao-versiculo"></p>
-        <span class="reference" id="pregacao-referencia"></span>
-      </div>
+      <figure class="verso-destaque reveal">
+        <span class="verso-destaque__aspas" aria-hidden="true">&ldquo;</span>
+        <blockquote class="verso-destaque__texto" id="pregacao-versiculo"></blockquote>
+        <figcaption class="verso-destaque__ref" id="pregacao-referencia"></figcaption>
+      </figure>
+
+      <ul class="baloes" id="pregacao-baloes" aria-label="Marcas do amor de Deus por nós"></ul>
     </div>
   </main>
 

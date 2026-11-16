@@ -14,6 +14,7 @@ const SHELL_FILES = [
   "/css/style.css",
   "/css/tokens.css",
   "/css/convite.css",
+  "/css/pregacao.css",
   "/data/conteudo.js",
   "/js/nav.js",
   "/js/reveal.js",

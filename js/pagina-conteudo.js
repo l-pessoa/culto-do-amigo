@@ -34,9 +34,49 @@ if (page === "tema") {
 }
 
 if (page === "pregacao") {
-  setText("pregacao-versiculo", `"${conteudo.pregacao.versiculo}"`);
-  setText("pregacao-referencia", conteudo.pregacao.referencia);
-  setText("pregacao-watermark", conteudo.pregacao.referencia);
+  const g = conteudo.pregacao;
+  setText("pregacao-tema", g.tema);
+  setText("pregacao-pregador", g.pregador);
+  setText("pregacao-versiculo", g.versiculo);
+  setText("pregacao-referencia", g.referencia);
+  setText("pregacao-watermark", g.referencia);
+
+  const baloes = document.getElementById("pregacao-baloes");
+  if (baloes) {
+    baloes.innerHTML = g.marcas
+      .map(
+        (palavra, i) => `
+        <li class="balao">
+          <button type="button" class="balao__corpo" aria-label="${palavra}"><span class="balao__n" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span>${palavra}</span></button>
+        </li>`
+      )
+      .join("");
+
+    // cada toque estoura e volta o balão (só diversão; o sentido de cada palavra fica pra pregação)
+    baloes.addEventListener("click", (event) => {
+      const corpo = event.target.closest(".balao__corpo");
+      if (!corpo) return;
+      corpo.classList.remove("is-pop");
+      void corpo.offsetWidth;
+      corpo.classList.add("is-pop");
+    });
+    baloes.addEventListener("animationend", (event) => {
+      if (event.animationName === "balao-pop") event.target.classList.remove("is-pop");
+    });
+
+    // os balões sobem quando a área entra na tela
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          baloes.classList.add("is-in");
+          io.disconnect();
+        }
+      }, { threshold: 0.1 });
+      io.observe(baloes);
+    } else {
+      baloes.classList.add("is-in");
+    }
+  }
 }
 
 if (page === "convite") {
