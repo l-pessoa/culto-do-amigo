@@ -4,6 +4,8 @@
 export const conteudo = {
   igreja: {
     nome: "AEC",
+    instagramUrl: "https://www.instagram.com/ae.carvalho",
+    instagramUser: "@ae.carvalho",
     endereco: "Av. Águia de Haia, 1658 – Artur Alvim, São Paulo – SP, 03694-000",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent("Av. Águia de Haia, 1658 – Artur Alvim, São Paulo – SP, 03694-000"),

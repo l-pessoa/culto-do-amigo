@@ -55,6 +55,8 @@ if (page === "convite") {
   setText("convite-maps-link", c.textoComoChegar);
   setText("convite-whatsapp-link", c.textoWhatsapp);
   setHref("convite-maps-link", conteudo.igreja.mapsUrl);
+  setHref("convite-instagram-link", conteudo.igreja.instagramUrl);
+  setText("convite-instagram-handle", conteudo.igreja.instagramUser);
   setHref(
     "convite-whatsapp-link",
     `https://api.whatsapp.com/send?text=${encodeURIComponent(c.mensagemCompartilhar)}`

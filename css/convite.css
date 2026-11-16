@@ -198,3 +198,13 @@
   .carrossel__slide { transform: none; }
   .carrossel__track { scroll-behavior: auto; }
 }
+
+/* ---------- redes sociais ---------- */
+.social-block { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); margin-block: var(--space-6) var(--space-4); text-align: center; }
+.social-block__label { color: var(--text-muted); font-size: var(--fs-small); letter-spacing: .08em; text-transform: uppercase; }
+.social-link { display: inline-flex; align-items: center; gap: var(--space-3); min-height: var(--touch-target); padding: var(--space-2) var(--space-5) var(--space-2) var(--space-2); border: 1px solid var(--border-gold); border-radius: 999px; transition: transform .2s ease, background .2s ease; }
+.social-link:hover, .social-link:active { transform: translateY(-3px); background: var(--bg-surface-soft); }
+.social-link__icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--color-gold), var(--color-terracotta)); color: var(--color-ink); transition: transform .25s ease; }
+.social-link:hover .social-link__icon { transform: rotate(-8deg) scale(1.08); }
+.social-link__handle { font-weight: 700; font-size: var(--fs-lead); }
+@media (prefers-reduced-motion: reduce) { .social-link, .social-link__icon { transition: none; } .social-link:hover, .social-link:hover .social-link__icon { transform: none; } }
