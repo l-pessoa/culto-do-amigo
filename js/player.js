@@ -3,8 +3,7 @@ import { discCoverHtml } from "./disc.js";
 
 const params = new URLSearchParams(location.search);
 const hinoId = params.get("hino");
-const index = conteudo.hinos.findIndex((h) => h.id === hinoId);
-const hino = index >= 0 ? conteudo.hinos[index] : null;
+const indexInicial = conteudo.hinos.findIndex((h) => h.id === hinoId);
 
 const root = document.getElementById("player-root");
 
@@ -14,31 +13,34 @@ const LEAD_PADRAO = 0.3;
 const leadParam = parseFloat(params.get("lead"));
 const LEAD = Number.isFinite(leadParam) ? Math.min(1, Math.max(0, leadParam)) : LEAD_PADRAO;
 
-if (!hino) {
+if (indexInicial < 0) {
   root.innerHTML = `
     <p class="player-back"><a href="louvores.html">&larr; Voltar</a></p>
     <p class="player-unavailable">Hino não encontrado. Volte para a lista de louvores e escolha outro.</p>
   `;
 } else {
-  renderPlayer(hino);
+  renderPlayer(indexInicial);
 }
 
-function renderPlayer(hino) {
+function renderPlayer(indexInicial) {
   root.innerHTML = `
     <p class="player-back"><a href="louvores.html">&larr; Voltar</a></p>
     <div class="player-panel">
-      <div class="player-disc-wrap"><div class="disc" id="player-disc">${discCoverHtml(hino)}</div></div>
+      <div class="player-disc-wrap"><div class="disc" id="player-disc"></div></div>
       <div class="player-info">
-        <h1 class="player-title">${hino.titulo}</h1>
-        <p class="player-category">${hino.categoria}</p>
+        <h1 class="player-title" id="player-title"></h1>
+        <p class="player-category" id="player-category"></p>
       </div>
+      <p class="player-unavailable" id="player-error" hidden>Áudio ainda não disponível para este hino.</p>
       <div id="player-audio-area" class="player-audio-area">
-        <div class="player-scrubber" id="player-scrubber">
-          <div class="player-scrubber__fill" id="player-scrubber-fill"></div>
-        </div>
-        <div class="player-time">
-          <span id="player-time-current">0:00</span>
-          <span id="player-time-duration">0:00</span>
+        <div id="player-progress">
+          <div class="player-scrubber" id="player-scrubber">
+            <div class="player-scrubber__fill" id="player-scrubber-fill"></div>
+          </div>
+          <div class="player-time">
+            <span id="player-time-current">0:00</span>
+            <span id="player-time-duration">0:00</span>
+          </div>
         </div>
         <div class="player-controls">
           <button type="button" id="player-prev" aria-label="Hino anterior">${iconPrev()}</button>
@@ -49,54 +51,118 @@ function renderPlayer(hino) {
         </div>
       </div>
     </div>
-    ${letraHtml(hino)}
-    ${upNextHtml(hino)}
-    <audio id="player-audio" src="${hino.arquivoAudio}" preload="none"></audio>
+    <div id="player-lyrics"></div>
+    <div id="player-upnext"></div>
+    <p class="sr-only" id="player-live" aria-live="polite"></p>
+    <audio id="player-audio" preload="none"></audio>
   `;
 
   const audio = document.getElementById("player-audio");
   const disc = document.getElementById("player-disc");
+  const titleEl = document.getElementById("player-title");
+  const categoryEl = document.getElementById("player-category");
+  const errorEl = document.getElementById("player-error");
+  const progressEl = document.getElementById("player-progress");
   const playBtn = document.getElementById("player-play");
   const scrubber = document.getElementById("player-scrubber");
   const scrubberFill = document.getElementById("player-scrubber-fill");
   const timeCurrent = document.getElementById("player-time-current");
   const timeDuration = document.getElementById("player-time-duration");
-  const audioArea = document.getElementById("player-audio-area");
   const prevBtn = document.getElementById("player-prev");
   const nextBtn = document.getElementById("player-next");
   const rewindBtn = document.getElementById("player-rewind");
   const forwardBtn = document.getElementById("player-forward");
-  const lyricsBody = document.getElementById("lyrics-body");
-  const lyricsLines = lyricsBody
-    ? Array.from(lyricsBody.querySelectorAll(".lyrics-line"))
-    : [];
+  const lyricsRoot = document.getElementById("player-lyrics");
+  const upNextRoot = document.getElementById("player-upnext");
+  const liveEl = document.getElementById("player-live");
+
+  let index = indexInicial;
+  let hino = conteudo.hinos[index];
+  let lyricsLines = [];
+  let temposReais = null;
   let currentLyricIndex = -1;
 
-  const prevHino = conteudo.hinos[index - 1];
-  const nextHino = conteudo.hinos[index + 1];
-  prevBtn.disabled = !prevHino;
-  nextBtn.disabled = !nextHino;
-  if (!prevHino) prevBtn.style.visibility = "hidden";
-  if (!nextHino) nextBtn.style.visibility = "hidden";
+  // Troca de hino na própria página, reaproveitando o MESMO <audio>: um elemento
+  // novo (ou uma navegação) perde a permissão de autoplay no iOS Safari e no Chrome Android.
+  function carregarHino(novoIndex, { tocar, anunciar = true }) {
+    index = novoIndex;
+    hino = conteudo.hinos[index];
 
-  prevBtn.addEventListener("click", () => {
-    if (prevHino) location.href = `player.html?hino=${encodeURIComponent(prevHino.id)}`;
-  });
-  nextBtn.addEventListener("click", () => {
-    if (nextHino) location.href = `player.html?hino=${encodeURIComponent(nextHino.id)}`;
-  });
+    titleEl.textContent = hino.titulo;
+    categoryEl.textContent = hino.categoria;
+    disc.innerHTML = discCoverHtml(hino);
+    lyricsRoot.innerHTML = letraHtml(hino);
+    upNextRoot.innerHTML = upNextHtml(hino);
+    const lyricsBody = document.getElementById("lyrics-body");
+    lyricsLines = lyricsBody ? Array.from(lyricsBody.querySelectorAll(".lyrics-line")) : [];
+    temposReais = hino.tempos && hino.tempos.length === lyricsLines.length ? hino.tempos : null;
+    currentLyricIndex = -1;
+
+    scrubberFill.style.width = "0%";
+    timeCurrent.textContent = "0:00";
+    timeDuration.textContent = "0:00";
+    errorEl.hidden = true;
+    progressEl.hidden = false;
+
+    const prevHino = conteudo.hinos[index - 1];
+    const nextHino = conteudo.hinos[index + 1];
+    prevBtn.disabled = !prevHino;
+    nextBtn.disabled = !nextHino;
+    prevBtn.style.visibility = prevHino ? "" : "hidden";
+    nextBtn.style.visibility = nextHino ? "" : "hidden";
+
+    // preserva ?lead= e demais parâmetros
+    const url = new URL(location.href);
+    url.searchParams.set("hino", hino.id);
+    history.replaceState(null, "", url);
+
+    atualizarMediaSession();
+
+    stopLyricsLoop();
+    audio.src = hino.arquivoAudio;
+    if (tocar) {
+      // autoplay pode ser bloqueado: sem erro no console, o botão fica em "tocar"
+      audio.play().catch(marcarPausado);
+    } else {
+      marcarPausado();
+    }
+
+    if (anunciar) {
+      liveEl.textContent = `${hino.titulo}, ${hino.categoria}`;
+      // o foco não pode ficar num prev/next que acabou de esconder
+      playBtn.focus({ preventScroll: true });
+    }
+  }
+
+  // se estava tocando, o novo hino continua tocando
+  function trocarPara(novoIndex) {
+    if (novoIndex < 0 || novoIndex >= conteudo.hinos.length) return;
+    carregarHino(novoIndex, { tocar: !audio.paused });
+  }
+
+  function marcarPausado() {
+    stopLyricsLoop();
+    disc.style.animationPlayState = "paused";
+    playBtn.innerHTML = iconPlay();
+    playBtn.setAttribute("aria-label", "Tocar");
+  }
+
+  prevBtn.addEventListener("click", () => trocarPara(index - 1));
+  nextBtn.addEventListener("click", () => trocarPara(index + 1));
 
   playBtn.addEventListener("click", () => {
     if (audio.paused) audio.play().catch(() => {});
     else audio.pause();
   });
 
-  rewindBtn.addEventListener("click", () => {
+  function voltar10() {
     audio.currentTime = Math.max(0, audio.currentTime - 10);
-  });
-  forwardBtn.addEventListener("click", () => {
+  }
+  function avancar10() {
     audio.currentTime = Math.min(audio.duration || audio.currentTime + 10, audio.currentTime + 10);
-  });
+  }
+  rewindBtn.addEventListener("click", voltar10);
+  forwardBtn.addEventListener("click", avancar10);
 
   // timeupdate só dispara ~4 Hz; durante o play a letra segue o relógio do frame
   let rafId = 0;
@@ -119,18 +185,12 @@ function renderPlayer(hino) {
     playBtn.setAttribute("aria-label", "Pausar");
   });
 
-  audio.addEventListener("pause", () => {
-    stopLyricsLoop();
-    disc.style.animationPlayState = "paused";
-    playBtn.innerHTML = iconPlay();
-    playBtn.setAttribute("aria-label", "Tocar");
-  });
+  audio.addEventListener("pause", marcarPausado);
 
   audio.addEventListener("ended", () => {
-    stopLyricsLoop();
-    disc.style.animationPlayState = "paused";
-    playBtn.innerHTML = iconPlay();
-    playBtn.setAttribute("aria-label", "Tocar");
+    marcarPausado();
+    // no último hino a playlist termina e fica parada
+    if (index + 1 < conteudo.hinos.length) carregarHino(index + 1, { tocar: true });
   });
 
   audio.addEventListener("timeupdate", () => {
@@ -143,8 +203,6 @@ function renderPlayer(hino) {
 
   // seek com o áudio parado não dispara o rAF
   audio.addEventListener("seeked", () => updateLyrics(audio.currentTime, audio.duration));
-
-  const temposReais = hino.tempos && hino.tempos.length === lyricsLines.length ? hino.tempos : null;
 
   function updateLyrics(currentTime, duration) {
     if (lyricsLines.length === 0) return;
@@ -175,6 +233,7 @@ function renderPlayer(hino) {
 
   audio.addEventListener("loadedmetadata", () => {
     timeDuration.textContent = formatTime(audio.duration);
+    atualizarPosicaoMediaSession();
   });
 
   scrubber.addEventListener("click", (event) => {
@@ -184,9 +243,52 @@ function renderPlayer(hino) {
     audio.currentTime = ratio * audio.duration;
   });
 
+  // sem áudio: prev/next continuam à mão, para dar para pular o hino
   audio.addEventListener("error", () => {
-    audioArea.innerHTML = `<p class="player-unavailable">Áudio ainda não disponível para este hino.</p>`;
+    if (!audio.getAttribute("src")) return;
+    errorEl.hidden = false;
+    progressEl.hidden = true;
+    marcarPausado();
   });
+
+  // controles na tela de bloqueio / fones
+  function atualizarMediaSession() {
+    if (!("mediaSession" in navigator)) return;
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: hino.titulo,
+      artist: hino.categoria || "AEC",
+      artwork: hino.capa ? [{ src: new URL(hino.capa, location.href).href }] : [],
+    });
+    navigator.mediaSession.setActionHandler("previoustrack", index > 0 ? () => trocarPara(index - 1) : null);
+    navigator.mediaSession.setActionHandler(
+      "nexttrack",
+      index + 1 < conteudo.hinos.length ? () => trocarPara(index + 1) : null
+    );
+  }
+
+  function atualizarPosicaoMediaSession() {
+    if (!("mediaSession" in navigator) || !navigator.mediaSession.setPositionState) return;
+    try {
+      navigator.mediaSession.setPositionState({
+        duration: audio.duration,
+        position: audio.currentTime,
+        playbackRate: audio.playbackRate,
+      });
+    } catch {
+      // duração ainda inválida (Infinity/NaN): ignora
+    }
+  }
+
+  if ("mediaSession" in navigator) {
+    const ms = navigator.mediaSession;
+    ms.setActionHandler("play", () => audio.play().catch(() => {}));
+    ms.setActionHandler("pause", () => audio.pause());
+    ms.setActionHandler("seekbackward", voltar10);
+    ms.setActionHandler("seekforward", avancar10);
+  }
+
+  // na abertura da página não anuncia nem rouba o foco
+  carregarHino(index, { tocar: false, anunciar: false });
 }
 
 function letraHtml(hino) {
