@@ -172,3 +172,16 @@
 .social-link:hover .social-link__icon { transform: rotate(-8deg) scale(1.08); }
 .social-link__handle { font-weight: 700; font-size: var(--fs-lead); }
 @media (prefers-reduced-motion: reduce) { .social-link, .social-link__icon { transition: none; } .social-link:hover, .social-link:hover .social-link__icon { transform: none; } }
+
+/* ---------- atalho do Maps sobre o mapa ---------- */
+.mapa__pin {
+  position: absolute; right: var(--space-3); bottom: var(--space-3); z-index: 3;
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  min-height: var(--touch-target); padding: var(--space-2) var(--space-4) var(--space-2) var(--space-3);
+  border-radius: 999px; background: linear-gradient(135deg, var(--color-gold), var(--color-terracotta));
+  color: var(--color-ink); font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.4);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.mapa__pin:hover, .mapa__pin:active { transform: translateY(-3px) scale(1.03); box-shadow: 0 10px 24px rgba(0,0,0,.5); }
+.mapa__pin:focus-visible { outline: 2px solid var(--color-cream); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .mapa__pin { transition: none; } .mapa__pin:hover, .mapa__pin:active { transform: none; } }
