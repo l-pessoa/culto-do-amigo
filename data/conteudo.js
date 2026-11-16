@@ -53,13 +53,63 @@ export const conteudo = {
     referencia: "Provérbios 17:17",
   },
 
+  // ---------------------------------------------------------------------
+  // PÁGINA "VOLTE SEMPRE" (convite.html) — convite pra voltar à congregação.
+  //
+  // COMO TROCAR AS FOTOS: as imagens atuais são placeholders (SVG) em
+  // assets/img/convite/grupos/ e assets/img/convite/igreja/. Coloque as fotos
+  // reais nessas pastas (recomendado: WebP, até ~150 KB cada, ~1280px de
+  // largura, proporção 4:3) e troque `src`, `alt` e `legenda` abaixo.
+  // Pode ter quantas fotos quiser em cada carrossel.
+  //
+  // HORÁRIOS: os valores marcados com placeholder: true são PROVISÓRIOS.
+  // Preencha dia/hora reais e remova `placeholder: true` de cada item
+  // (o aviso "horários provisórios" some quando não restar nenhum).
+  // ---------------------------------------------------------------------
   convite: {
-    titulo: "Convite",
-    frase: "Você é nosso convidado especial.",
+    titulo: "Volte sempre",
+    frase: "A porta continua aberta — e a cadeira, guardada.",
     texto:
-      "No dia do Culto do Amigo, queremos abrir as portas para você — não importa se essa é sua primeira vez em uma igreja ou se faz tempo que não vem. Vai ter música, uma palavra leve e gente feliz em te receber. Traga um amigo, ou venha ser um.",
+      "Que bom que você esteve com a gente! Aqui tem música boa, abraço apertado, café quentinho e gente que ficou com saudade antes mesmo de você ir embora. Volte no próximo culto, e traga um amigo: a família AEC cresce com você.",
+    motivosTitulo: "Por que voltar?",
+    motivos: [
+      { icone: "♪", titulo: "Louvor que contagia", texto: "Cante junto, bata palma, desafine à vontade. Ninguém está contando." },
+      { icone: "♡", titulo: "Abraço de verdade", texto: "Você chega estranho e sai conhecido. Aqui tem sempre alguém guardando lugar." },
+      { icone: "✦", titulo: "Palavra que fala com você", texto: "Simples, leve, cheia de esperança. Dá pra levar pra segunda-feira." },
+    ],
+    horariosTitulo: "Quando tem culto",
+    horariosAviso: "Horários provisórios — em breve confirmados pela liderança.",
+    horarios: [
+      { dia: "Domingo", hora: "00h00", nome: "Culto da família (exemplo)", placeholder: true },
+      { dia: "Quarta-feira", hora: "00h00", nome: "Culto de oração (exemplo)", placeholder: true },
+      { dia: "Sábado", hora: "00h00", nome: "Encontro dos jovens (exemplo)", placeholder: true },
+    ],
+    gruposTitulo: "Nossos grupos",
+    gruposSub: "Louvor, jovens, crianças, irmãs… tem um lugar pra você.",
+    grupos: [
+      { src: "assets/img/convite/grupos/grupo-1.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Coral: vozes que se encontram" },
+      { src: "assets/img/convite/grupos/grupo-2.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Jovens: energia de sobra" },
+      { src: "assets/img/convite/grupos/grupo-3.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Crianças: o culto mais animado" },
+      { src: "assets/img/convite/grupos/grupo-4.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Irmãs: amizade que sustenta" },
+    ],
+    igrejaTitulo: "Nossa igreja e momentos",
+    igrejaSub: "Um cantinho da casa e uns instantes que a gente guarda no coração.",
+    igreja: [
+      { src: "assets/img/convite/igreja/igreja-1.svg", alt: "Foto da igreja AEC (em breve)", legenda: "Nossa casa, sua casa" },
+      { src: "assets/img/convite/igreja/igreja-2.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "Cultos de coração cheio" },
+      { src: "assets/img/convite/igreja/igreja-3.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "Depois do culto, o melhor papo" },
+      { src: "assets/img/convite/igreja/igreja-4.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "Festa, risada e bolo" },
+    ],
+    mapaTitulo: "Como chegar",
+    textoComoChegar: "Como chegar",
+    textoWhatsapp: "Traga um amigo",
+    musica: {
+      rotulo: "Ouvir um hino",
+      titulo: "Cristo, o Fiel Amigo",
+      arquivo: "/assets/audio/harpa-1.mp3",
+    },
     mensagemCompartilhar:
-      "Vem comigo no Culto do Amigo! Preparamos uma noite especial e eu queria muito ter você lá. 💛",
+      "Vem comigo na AEC! Tem louvor, abraço e gente feliz te esperando. Av. Águia de Haia, 1658 – Artur Alvim. Eu guardo seu lugar! 💛",
   },
 
   hinos: [

@@ -40,12 +40,73 @@ if (page === "pregacao") {
 }
 
 if (page === "convite") {
-  setText("convite-frase", conteudo.convite.frase);
-  setText("convite-texto", conteudo.convite.texto);
+  const c = conteudo.convite;
+  setText("convite-titulo", c.titulo);
+  setText("convite-frase", c.frase);
+  setText("convite-texto", c.texto);
   setText("convite-endereco", conteudo.igreja.endereco);
+  setText("convite-mapa-endereco", conteudo.igreja.endereco);
+  setText("convite-motivos-h", c.motivosTitulo);
+  setText("convite-horarios-h", c.horariosTitulo);
+  setText("convite-grupos-h", c.gruposTitulo);
+  setText("convite-grupos-sub", c.gruposSub);
+  setText("convite-igreja-h", c.igrejaTitulo);
+  setText("convite-igreja-sub", c.igrejaSub);
+  setText("convite-mapa-h", c.mapaTitulo);
+  setText("convite-maps-link", c.textoComoChegar);
+  setText("convite-whatsapp-link", c.textoWhatsapp);
   setHref("convite-maps-link", conteudo.igreja.mapsUrl);
   setHref(
     "convite-whatsapp-link",
-    `https://api.whatsapp.com/send?text=${encodeURIComponent(conteudo.convite.mensagemCompartilhar)}`
+    `https://api.whatsapp.com/send?text=${encodeURIComponent(c.mensagemCompartilhar)}`
   );
+
+  const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
+
+  const motivosEl = document.getElementById("convite-motivos");
+  if (motivosEl) {
+    motivosEl.innerHTML = c.motivos
+      .map(
+        (m) => `
+        <li class="motivo-card reveal-child">
+          <span class="motivo-card__icon" aria-hidden="true">${esc(m.icone)}</span>
+          <h3>${esc(m.titulo)}</h3>
+          <p>${esc(m.texto)}</p>
+        </li>`
+      )
+      .join("");
+  }
+
+  const horEl = document.getElementById("convite-horarios");
+  if (horEl) {
+    horEl.innerHTML = c.horarios
+      .map(
+        (h) => `
+        <li class="horario-card${h.placeholder ? " is-placeholder" : ""}">
+          <span class="horario-card__dia">${esc(h.dia)}</span>
+          <span class="horario-card__hora">${esc(h.hora)}</span>
+          <span class="horario-card__nome">${esc(h.nome)}</span>
+        </li>`
+      )
+      .join("");
+    const aviso = document.getElementById("convite-horarios-aviso");
+    if (aviso && c.horarios.some((h) => h.placeholder)) {
+      aviso.textContent = c.horariosAviso;
+      aviso.hidden = false;
+    }
+  }
+
+  // Mapa: sem chave de API; só carrega online (o fallback textual fica por baixo).
+  const mapa = document.getElementById("convite-mapa");
+  const iframe = document.getElementById("convite-mapa-iframe");
+  if (mapa && iframe) {
+    const src = `https://maps.google.com/maps?q=${encodeURIComponent(conteudo.igreja.endereco)}&output=embed`;
+    const carregar = () => {
+      if (iframe.getAttribute("src")) return;
+      iframe.addEventListener("load", () => mapa.classList.add("is-loaded"), { once: true });
+      iframe.setAttribute("src", src);
+    };
+    if (navigator.onLine) carregar();
+    window.addEventListener("online", carregar);
+  }
 }
