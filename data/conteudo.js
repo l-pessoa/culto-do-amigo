@@ -89,10 +89,12 @@ export const conteudo = {
     texto:
       "Foi uma alegria receber você no Culto do Amigo. Convidamos você a voltar e a participar conosco dos cultos, ouvindo a Palavra de Deus em comunhão. Nossa maior motivação é Jesus, o Amigo que nos acolheu primeiro e que também deseja acolher você. Traga a sua família e os seus amigos.",
     horariosTitulo: "Quando tem culto",
+    // `dow`: dia da semana (0 = domingo … 6 = sábado); `inicio` e `fim` em horário de Brasília (HH:MM).
+    // Alimentam o cartão "Próximo culto" e o arquivo de agenda; `dia` e `hora` são só o texto exibido.
     horarios: [
-      { dia: "Domingo", hora: "17h30 às 20h", nome: "Culto da família" },
-      { dia: "Terça-feira", hora: "19h30 às 21h", nome: "Culto de ensino" },
-      { dia: "Quinta-feira", hora: "19h30 às 21h", nome: "Culto público" },
+      { dia: "Domingo", hora: "17h30 às 20h", nome: "Culto da família", dow: 0, inicio: "17:30", fim: "20:00" },
+      { dia: "Terça-feira", hora: "19h30 às 21h", nome: "Culto de ensino", dow: 2, inicio: "19:30", fim: "21:00" },
+      { dia: "Quinta-feira", hora: "19h30 às 21h", nome: "Culto público", dow: 4, inicio: "19:30", fim: "21:00" },
     ],
     gruposTitulo: "Nossos grupos",
     gruposSub: "Conheça os grupos que servem ao Senhor em nossa congregação.",
