@@ -24,6 +24,7 @@ const SHELL_FILES = [
   "/js/louvores.js",
   "/js/player.js",
   "/js/pagina-conteudo.js",
+  "/js/pregacao-compartilhar.js",
   "/js/convite-carrossel.js",
   "/js/disc.js",
   "/js/pwa.js",
