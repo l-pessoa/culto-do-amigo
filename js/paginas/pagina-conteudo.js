@@ -35,7 +35,7 @@ if (page === "tema") {
 
 if (page === "pregacao") {
   const g = conteudo.pregacao;
-  setText("pregacao-tema", g.tema);
+  setText("pregacao-tema", `${g.tema}:`);
   setText("pregacao-pregador", g.pregador);
   setText("pregacao-versiculo", g.versiculo);
   setText("pregacao-referencia", g.referencia);
@@ -45,9 +45,9 @@ if (page === "pregacao") {
   if (baloes) {
     baloes.innerHTML = g.marcas
       .map(
-        (palavra, i) => `
+        (palavra) => `
         <li class="balao">
-          <button type="button" class="balao__corpo" aria-label="${palavra}"><span class="balao__n" aria-hidden="true">${String(i + 1).padStart(2, "0")}</span><span>${palavra}</span></button>
+          <button type="button" class="balao__corpo" aria-label="${palavra}"><span>${palavra}</span></button>
         </li>`
       )
       .join("");

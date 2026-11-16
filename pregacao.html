@@ -61,7 +61,6 @@
 
       <div class="section-head reveal">
         <p class="pregacao-eyebrow">Pregação</p>
-        <h1 class="script-title pregacao-tema" id="pregacao-tema"></h1>
         <p class="pregacao-pregador" id="pregacao-pregador"></p>
       </div>
 
@@ -80,7 +79,12 @@
         <p class="compartilhar__aviso" id="compartilhar-aviso" role="status" aria-live="polite"></p>
       </div>
 
-      <ul class="baloes" id="pregacao-baloes" aria-label="Marcas do amor de Deus por nós"></ul>
+      <!-- o título e as palavras são UMA frase só ("As marcas do amor de Deus por nós: …"):
+           por isso ficam colados, sem nada no meio, e as palavras não levam número nem parecem uma lista -->
+      <section class="marcas" aria-labelledby="pregacao-tema">
+        <h1 class="script-title pregacao-tema" id="pregacao-tema"></h1>
+        <ul class="baloes" id="pregacao-baloes" aria-labelledby="pregacao-tema"></ul>
+      </section>
     </div>
   </main>
 
