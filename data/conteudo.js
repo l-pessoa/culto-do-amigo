@@ -7,8 +7,14 @@ export const conteudo = {
     instagramUrl: "https://www.instagram.com/ae.carvalho",
     instagramUser: "@ae.carvalho",
     endereco: "Av. Águia de Haia, 1658 – Artur Alvim, São Paulo – SP, 03694-000",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=" +
-      encodeURIComponent("Av. Águia de Haia, 1658 – Artur Alvim, São Paulo – SP, 03694-000"),
+    // Ponto exato da igreja no Google Maps ("Igreja Assembleia de Deus - min Belém - CAE Carvalho").
+    // O endereço por texto cai num ponto aproximado, então os links usam as coordenadas.
+    latitude: -23.5313671,
+    longitude: -46.4735166,
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=-23.5313671,-46.4735166",
+    // Código de incorporação do Maps (Compartilhar > Incorporar um mapa), só o endereço do src.
+    mapaEmbedUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.031564681476!2d-46.473516599999996!3d-23.5313671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce66d4bb505341%3A0x9d347f3f5129fbf2!2sIgreja%20Assembl%C3%A9ia%20de%20Deus-%20min%20Bel%C3%A9m-%20CAE%20Carvalho!5e0!3m2!1spt-BR!2sbr!4v1794856220548!5m2!1spt-BR!2sbr",
   },
 
   home: {

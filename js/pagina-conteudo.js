@@ -128,7 +128,7 @@ if (page === "convite") {
   const mapa = document.getElementById("convite-mapa");
   const iframe = document.getElementById("convite-mapa-iframe");
   if (mapa && iframe) {
-    const src = `https://maps.google.com/maps?q=${encodeURIComponent(conteudo.igreja.endereco)}&output=embed`;
+    const src = conteudo.igreja.mapaEmbedUrl;
     const carregar = () => {
       if (iframe.getAttribute("src")) return;
       iframe.addEventListener("load", () => mapa.classList.add("is-loaded"), { once: true });
