@@ -71,7 +71,7 @@ export const conteudo = {
       "Foi uma alegria receber você no Culto do Amigo. Convidamos você a voltar e a participar conosco dos cultos, ouvindo a Palavra de Deus em comunhão. Nossa maior motivação é Jesus, o Amigo que nos acolheu primeiro e que também deseja acolher você. Traga a sua família e os seus amigos.",
     horariosTitulo: "Quando tem culto",
     horarios: [
-      { dia: "Domingo", hora: "17h30", nome: "Culto da família" },
+      { dia: "Domingo", hora: "17h30 às 20h", nome: "Culto da família" },
       { dia: "Terça-feira", hora: "19h30 às 21h", nome: "Culto de ensino" },
       { dia: "Quinta-feira", hora: "19h30 às 21h", nome: "Culto público" },
     ],
@@ -100,7 +100,7 @@ export const conteudo = {
     textoComoChegar: "Como chegar",
     textoWhatsapp: "Convidar um amigo",
     mensagemCompartilhar:
-      "Olá! Gostaria de convidar você para os cultos da AEC, na Av. Águia de Haia, 1658 – Artur Alvim. Terça e quinta, às 19h30, e domingo, às 17h30. Será uma alegria receber você!",
+      "Olá! Gostaria de convidar você para os cultos da AEC, na Av. Águia de Haia, 1658 – Artur Alvim. Terça e quinta, das 19h30 às 21h, e domingo, das 17h30 às 20h. Será uma alegria receber você!",
   },
 
   hinos: [
