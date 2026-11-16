@@ -1,6 +1,6 @@
 // Bump this whenever css/js/html change in a way that must reach users
 // right away — it busts the precache and drops old runtime entries.
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
 const SHELL_CACHE = `culto-amigo-shell-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `culto-amigo-runtime-${CACHE_VERSION}`;
 
@@ -13,6 +13,7 @@ const SHELL_FILES = [
   "/convite.html",
   "/css/style.css",
   "/css/tokens.css",
+  "/css/convite.css",
   "/data/conteudo.js",
   "/js/nav.js",
   "/js/reveal.js",
@@ -20,6 +21,8 @@ const SHELL_FILES = [
   "/js/louvores.js",
   "/js/player.js",
   "/js/pagina-conteudo.js",
+  "/js/convite-carrossel.js",
+  "/js/convite-musica.js",
   "/js/disc.js",
   "/js/pwa.js",
   "/manifest.webmanifest",
