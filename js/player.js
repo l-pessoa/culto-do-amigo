@@ -8,6 +8,12 @@ const hino = index >= 0 ? conteudo.hinos[index] : null;
 
 const root = document.getElementById("player-root");
 
+// Os tempos foram marcados ~0,2 s depois do início real de cada linha (latência
+// ao apertar espaço); LEAD antecipa a troca. ?lead= (0–1 s) deixa calibrar.
+const LEAD_PADRAO = 0.3;
+const leadParam = parseFloat(params.get("lead"));
+const LEAD = Number.isFinite(leadParam) ? Math.min(1, Math.max(0, leadParam)) : LEAD_PADRAO;
+
 if (!hino) {
   root.innerHTML = `
     <p class="player-back"><a href="louvores.html">&larr; Voltar</a></p>
@@ -92,19 +98,36 @@ function renderPlayer(hino) {
     audio.currentTime = Math.min(audio.duration || audio.currentTime + 10, audio.currentTime + 10);
   });
 
+  // timeupdate só dispara ~4 Hz; durante o play a letra segue o relógio do frame
+  let rafId = 0;
+  function lyricsLoop() {
+    updateLyrics(audio.currentTime, audio.duration);
+    rafId = requestAnimationFrame(lyricsLoop);
+  }
+  function startLyricsLoop() {
+    if (!rafId) rafId = requestAnimationFrame(lyricsLoop);
+  }
+  function stopLyricsLoop() {
+    cancelAnimationFrame(rafId);
+    rafId = 0;
+  }
+
   audio.addEventListener("play", () => {
+    startLyricsLoop();
     disc.style.animationPlayState = "running";
     playBtn.innerHTML = iconPause();
     playBtn.setAttribute("aria-label", "Pausar");
   });
 
   audio.addEventListener("pause", () => {
+    stopLyricsLoop();
     disc.style.animationPlayState = "paused";
     playBtn.innerHTML = iconPlay();
     playBtn.setAttribute("aria-label", "Tocar");
   });
 
   audio.addEventListener("ended", () => {
+    stopLyricsLoop();
     disc.style.animationPlayState = "paused";
     playBtn.innerHTML = iconPlay();
     playBtn.setAttribute("aria-label", "Tocar");
@@ -118,22 +141,26 @@ function renderPlayer(hino) {
     updateLyrics(audio.currentTime, audio.duration);
   });
 
+  // seek com o áudio parado não dispara o rAF
+  audio.addEventListener("seeked", () => updateLyrics(audio.currentTime, audio.duration));
+
   const temposReais = hino.tempos && hino.tempos.length === lyricsLines.length ? hino.tempos : null;
 
   function updateLyrics(currentTime, duration) {
     if (lyricsLines.length === 0) return;
+    const t = currentTime + LEAD;
 
     let index;
     if (temposReais) {
       index = 0;
       for (let i = 0; i < temposReais.length; i++) {
-        if (currentTime >= temposReais[i]) index = i;
+        if (t >= temposReais[i]) index = i;
         else break;
       }
     } else {
       index = Math.min(
         lyricsLines.length - 1,
-        Math.floor((currentTime / duration) * lyricsLines.length)
+        Math.floor((currentTime / (duration || Infinity)) * lyricsLines.length)
       );
     }
 
