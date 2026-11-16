@@ -22,7 +22,6 @@ const SHELL_FILES = [
   "/js/player.js",
   "/js/pagina-conteudo.js",
   "/js/convite-carrossel.js",
-  "/js/convite-musica.js",
   "/js/disc.js",
   "/js/pwa.js",
   "/manifest.webmanifest",

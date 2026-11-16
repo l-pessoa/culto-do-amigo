@@ -34,42 +34,6 @@
 @keyframes convite-twinkle { 0%,100% { transform: scale(.8); opacity: .55; } 50% { transform: scale(1.12); opacity: 1; } }
 
 /* ---------- botão de música ---------- */
-.musica-wrap { margin-top: var(--space-5); text-align: center; }
-.musica-btn {
-  display: inline-flex; align-items: center; gap: var(--space-3);
-  min-height: var(--touch-target);
-  padding: 0 var(--space-4) 0 var(--space-3);
-  border: 1px solid var(--color-terracotta);
-  border-radius: var(--radius-pill);
-  background: transparent;
-  color: var(--text-muted);
-  font: 500 var(--fs-small) var(--font-body);
-  cursor: pointer;
-  transition: background-color .2s, color .2s, border-color .2s, transform .18s;
-}
-.musica-btn[hidden] { display: none; }
-.musica-btn:hover { background: rgba(169,128,95,.14); color: var(--color-gold); }
-.musica-btn:active { transform: scale(.97); }
-.musica-btn:focus-visible { outline: 2px solid var(--color-gold); outline-offset: 2px; }
-.musica-btn__icon {
-  display: grid; place-items: center;
-  width: 28px; height: 28px; border-radius: 50%;
-  background: linear-gradient(165deg, var(--color-gold), var(--color-terracotta));
-  color: var(--color-ink);
-}
-.musica-btn .i-pause, .musica-btn.is-playing .i-play { display: none; }
-.musica-btn.is-playing .i-pause { display: block; }
-.musica-btn.is-playing { color: var(--color-gold); border-color: var(--color-gold); }
-.musica-btn__eq { display: none; gap: 2px; align-items: flex-end; height: 14px; }
-.musica-btn.is-playing .musica-btn__eq { display: inline-flex; }
-.musica-btn__eq i {
-  width: 3px; height: 100%; background: var(--color-gold); border-radius: 2px;
-  transform-origin: bottom; animation: convite-eq 1s ease-in-out infinite;
-}
-.musica-btn__eq i:nth-child(2) { animation-delay: .25s; }
-.musica-btn__eq i:nth-child(3) { animation-delay: .5s; }
-@keyframes convite-eq { 0%,100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
-
 /* ---------- horários ---------- */
 .horarios { list-style: none; padding: 0; display: grid; gap: var(--space-3); max-width: 640px; margin-inline: auto; }
 .horario-card {
@@ -192,7 +156,7 @@
 
 /* ---------- reduzir movimento ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .spin-slow, .twinkle, .musica-btn__eq i { animation: none; }
+  .spin-slow, .twinkle { animation: none; }
   .horario-card, .carrossel__slide, .carrossel__dot::before { transition: none; }
   .horario-card:hover, .carrossel__slide.is-active:hover { transform: none; }
   .carrossel__slide { transform: none; }

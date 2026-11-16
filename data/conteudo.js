@@ -66,9 +66,9 @@ export const conteudo = {
   // ---------------------------------------------------------------------
   convite: {
     titulo: "Volte sempre",
-    frase: "A porta continua aberta — e a cadeira, guardada.",
+    frase: "A casa do Senhor está de portas abertas para você.",
     texto:
-      "Que bom que você esteve com a gente! Aqui tem música boa, abraço apertado, café quentinho e gente que ficou com saudade antes mesmo de você ir embora. Volte no próximo culto, e traga um amigo: a família AEC cresce com você.",
+      "Foi uma alegria receber você no Culto do Amigo. Convidamos você a voltar e a participar conosco dos cultos, ouvindo a Palavra de Deus em comunhão. Nossa maior motivação é Jesus, o Amigo que nos acolheu primeiro e que também deseja acolher você. Traga a sua família e os seus amigos.",
     horariosTitulo: "Quando tem culto",
     horarios: [
       { dia: "Domingo", hora: "17h30", nome: "Culto da família" },
@@ -76,31 +76,26 @@ export const conteudo = {
       { dia: "Quinta-feira", hora: "19h30 às 21h", nome: "Culto público" },
     ],
     gruposTitulo: "Nossos grupos",
-    gruposSub: "Louvor, jovens, crianças, irmãs… tem um lugar pra você.",
+    gruposSub: "Conheça os grupos que servem ao Senhor em nossa congregação.",
     grupos: [
-      { src: "assets/img/convite/grupos/grupo-1.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Coral: vozes que se encontram" },
-      { src: "assets/img/convite/grupos/grupo-2.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Jovens: energia de sobra" },
-      { src: "assets/img/convite/grupos/grupo-3.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Crianças: o culto mais animado" },
-      { src: "assets/img/convite/grupos/grupo-4.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "Irmãs: amizade que sustenta" },
+      { src: "assets/img/convite/grupos/grupo-1.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-2.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-3.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-4.svg", alt: "Foto de um dos grupos da AEC (em breve)", legenda: "" },
     ],
     igrejaTitulo: "Nossa igreja e momentos",
-    igrejaSub: "Um cantinho da casa e uns instantes que a gente guarda no coração.",
+    igrejaSub: "Momentos de comunhão, louvor e adoração em nossa congregação.",
     igreja: [
-      { src: "assets/img/convite/igreja/igreja-1.svg", alt: "Foto da igreja AEC (em breve)", legenda: "Nossa casa, sua casa" },
-      { src: "assets/img/convite/igreja/igreja-2.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "Cultos de coração cheio" },
-      { src: "assets/img/convite/igreja/igreja-3.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "Depois do culto, o melhor papo" },
-      { src: "assets/img/convite/igreja/igreja-4.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "Festa, risada e bolo" },
+      { src: "assets/img/convite/igreja/igreja-1.svg", alt: "Foto da igreja AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-2.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-3.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "" },
+      { src: "assets/img/convite/igreja/igreja-4.svg", alt: "Foto de um momento na AEC (em breve)", legenda: "" },
     ],
     mapaTitulo: "Como chegar",
     textoComoChegar: "Como chegar",
-    textoWhatsapp: "Traga um amigo",
-    musica: {
-      rotulo: "Ouvir um hino",
-      titulo: "Cristo, o Fiel Amigo",
-      arquivo: "/assets/audio/harpa-1.mp3",
-    },
+    textoWhatsapp: "Convidar um amigo",
     mensagemCompartilhar:
-      "Vem comigo na AEC! Tem louvor, abraço e gente feliz te esperando. Av. Águia de Haia, 1658 – Artur Alvim. Eu guardo seu lugar! 💛",
+      "Olá! Gostaria de convidar você para os cultos da AEC, na Av. Águia de Haia, 1658 – Artur Alvim. Terça e quinta, às 19h30, e domingo, às 17h30. Será uma alegria receber você!",
   },
 
   hinos: [

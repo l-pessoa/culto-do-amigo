@@ -24,7 +24,7 @@ function montar(raiz) {
             (f, i) => `
           <figure class="carrossel__slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${fotos.length}">
             <img src="${esc(f.src)}" alt="${esc(f.alt)}" width="1280" height="960" loading="${i === 0 ? "eager" : "lazy"}" decoding="async" draggable="false">
-            <figcaption>${esc(f.legenda)}</figcaption>
+            ${f.legenda ? `<figcaption>${esc(f.legenda)}</figcaption>` : ""}
           </figure>`
           )
           .join("")}
@@ -76,7 +76,7 @@ function montar(raiz) {
       });
       if (melhor !== atual) {
         marcar(melhor);
-        live.textContent = `${melhor + 1} de ${slides.length}: ${fotos[melhor].legenda}`;
+        live.textContent = `${melhor + 1} de ${slides.length}: ${fotos[melhor].legenda || fotos[melhor].alt}`;
       }
     });
   }, { passive: true });
