@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pregação — Culto do Amigo</title>
-  <meta name="description" content="O versículo lido na pregação do Culto do Amigo.">
+  <meta name="description" content="As marcas do amor de Deus por nós — Romanos 5:8. Mensagem do Pr. Flávio Lauton no Culto do Amigo.">
+  <link rel="canonical" href="https://culto-do-amigo.vercel.app/pregacao.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Culto do Amigo — AEC">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Pregação — Culto do Amigo">
+  <meta property="og:description" content="As marcas do amor de Deus por nós — Romanos 5:8. Mensagem do Pr. Flávio Lauton no Culto do Amigo.">
+  <meta property="og:url" content="https://culto-do-amigo.vercel.app/pregacao.html">
+  <meta property="og:image" content="https://culto-do-amigo.vercel.app/assets/img/og/og-culto-do-amigo.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Culto do Amigo — AEC: louvores, lema, pregação e convite">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/pregacao.css">
   <link rel="manifest" href="/manifest.webmanifest">
@@ -59,6 +71,15 @@
         <figcaption class="verso-destaque__ref" id="pregacao-referencia"></figcaption>
       </figure>
 
+      <div class="compartilhar">
+        <button type="button" class="btn btn-primary" id="compartilhar-versiculo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+          Compartilhar versículo
+        </button>
+        <a class="compartilhar__whats" id="compartilhar-whatsapp" href="https://api.whatsapp.com/send" target="_blank" rel="noopener">Enviar o texto no WhatsApp</a>
+        <p class="compartilhar__aviso" id="compartilhar-aviso" role="status" aria-live="polite"></p>
+      </div>
+
       <ul class="baloes" id="pregacao-baloes" aria-label="Marcas do amor de Deus por nós"></ul>
     </div>
   </main>
@@ -94,5 +115,6 @@
   <script src="js/pwa.js" defer></script>
   <script src="js/reveal.js" defer></script>
   <script type="module" src="js/pagina-conteudo.js"></script>
+  <script type="module" src="js/pregacao-compartilhar.js"></script>
 </body>
 </html>

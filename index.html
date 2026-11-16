@@ -4,8 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Culto do Amigo — AEC</title>
-  <meta name="description" content="Você é nosso convidado especial. Conheça o Culto do Amigo: louvores, lema, pregação e um convite pra voltar sempre.">
+  <meta name="description" content="Culto do Amigo — AEC: ouça os louvores, leia o lema e a mensagem da pregação, e veja os horários dos nossos cultos. A casa do Senhor está de portas abertas para você.">
+  <link rel="canonical" href="https://culto-do-amigo.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Culto do Amigo — AEC">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Culto do Amigo — AEC">
+  <meta property="og:description" content="Culto do Amigo — AEC: ouça os louvores, leia o lema e a mensagem da pregação, e veja os horários dos nossos cultos. A casa do Senhor está de portas abertas para você.">
+  <meta property="og:url" content="https://culto-do-amigo.vercel.app/">
+  <meta property="og:image" content="https://culto-do-amigo.vercel.app/assets/img/og/og-culto-do-amigo.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Culto do Amigo — AEC: louvores, lema, pregação e convite">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/proximo-culto.css">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="icon" href="/assets/icons/icon-32.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
@@ -208,6 +221,13 @@
         </div>
         <div class="content-narrow reveal-child">
           <p id="home-convite-texto"></p>
+          <div class="proximo-culto" data-proximo-culto hidden>
+          <p class="proximo-culto__rotulo">Próximo culto</p>
+          <p class="proximo-culto__quando" data-pc-quando></p>
+          <p class="proximo-culto__detalhe" data-pc-detalhe></p>
+          <button type="button" class="btn btn-outline proximo-culto__agenda" data-pc-agenda>Adicionar à agenda</button>
+          <p class="proximo-culto__aviso" data-pc-aviso aria-live="polite"></p>
+        </div>
           <a class="link-more" href="convite.html">Ler mais →</a>
         </div>
       </div>
@@ -244,6 +264,7 @@
   <script src="js/nav.js" defer></script>
   <script src="js/pwa.js" defer></script>
   <script src="js/reveal.js" defer></script>
+  <script type="module" src="js/proximo-culto.js"></script>
   <script type="module" src="js/home.js"></script>
 </body>
 </html>
