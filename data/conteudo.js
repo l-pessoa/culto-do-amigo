@@ -131,12 +131,13 @@ export const conteudo = {
         "Nele nós temos um firme guia", "Nele só, Nele só", "A noite enche de alegria", "Ele só, Ele só", "",
         "E nas lutas de cada dia", "Cristo nunca me deixa só", "Pois Ele é meu seguro guia", "Ele só, Ele só",
       ],
+      // início de cada linha (marcas originais deslocadas em 1: o toque inicial marcava a 2ª linha)
       tempos: [
-        16.08, 21.32, 26.88, 32.34, 37.84, 43.32, 48.84, 54.04, 59.71, 63.64,
-        65.45, 70.68, 73.54, 76.15, 81.52, 87.24, 92.16, 98.08, 103.39, 108.84,
-        114.35, 119.77, 125.19, 130.86, 136.1, 141.34, 147.08, 152.23, 158.26, 163.3,
-        168.7, 174.76, 179.77, 185.32, 190.96, 196.16, 201.74, 207.08, 213.08, 218.24,
-        223.55, 229.03, // última linha estimada pelo padrão das 4 repetições anteriores do refrão
+        10.84, 16.08, 21.32, 26.88, 32.34, 37.84, 43.32, 48.84, 54.04, 59.71,
+        63.64, 65.45, 70.68, 73.54, 76.15, 81.52, 87.24, 92.16, 98.08, 103.39,
+        108.84, 114.35, 119.77, 125.19, 130.86, 136.1, 141.34, 147.08, 152.23, 158.26,
+        163.3, 168.7, 174.76, 179.77, 185.32, 190.96, 196.16, 201.74, 207.08, 213.08,
+        218.24, 223.55,
       ],
     },
     {
@@ -153,10 +154,11 @@ export const conteudo = {
         "Cristo é verdadeiro amigo", "Disto provas nos mostrou", "Quando pra levar consigo", "O culpado encarnou", "",
         "Derramou Seu sangue puro", "Nossas manchas pra lavar", "Gozo em vida e no futuro", "Nele podemos alcançar",
       ],
+      // início de cada linha (marcas originais deslocadas em 1: o toque inicial marcava a 2ª linha)
       tempos: [
-        18.08, 23.67, 29.74, 35.52, 41.36, 47.39, 53.33, 59.02, 64.65, 70.59,
-        76.71, 82.38, 89.12, 94.32, 100.07, 106.09, 112.77, 118.72, 123.56, 129.45,
-        135.05, 141.1, 146.78, 152.63, // última linha estimada pelo intervalo médio do hino (~5,85s)
+        12.49, 18.08, 23.67, 29.74, 35.52, 41.36, 47.39, 53.33, 59.02, 64.65,
+        70.59, 76.71, 82.38, 89.12, 94.32, 100.07, 106.09, 112.77, 118.72, 123.56,
+        129.45, 135.05, 141.1, 146.78,
       ],
     },
     {
@@ -175,11 +177,12 @@ export const conteudo = {
         "A Teus pés, ó, Jesus Cristo", "Tenho um gozo divinal", "A Teus pés encontro abrigo", "Oh, bondoso Salvador",
         "Só em Ti, ó, Jesus Cristo", "Há consolo sem igual", "Para minha alma abatida", "Neste mundo de horror",
       ],
+      // início de cada linha (marcas originais deslocadas em 1: o toque inicial marcava a 2ª linha)
       tempos: [
-        16.23, 21.75, 27.1, 32.2, 38.24, 43.48, 49.21, 54.47, 59.96, 65.77,
-        70.87, 76.43, 81.79, 87.16, 92.82, 97.8, 103.75, 108.96, 114.64, 120.11,
-        125.6, 130.9, 136.47, 141.33, 147.25, 152.86, 158.32, 163.64, 169.11, 174.63,
-        180.07, 185.53, // última linha estimada pelo intervalo médio do hino (~5,46s)
+        10.71, 16.23, 21.75, 27.1, 32.2, 38.24, 43.48, 49.21, 54.47, 59.96,
+        65.77, 70.87, 76.43, 81.79, 87.16, 92.82, 97.8, 103.75, 108.96, 114.64,
+        120.11, 125.6, 130.9, 136.47, 141.33, 147.25, 152.86, 158.32, 163.64, 169.11,
+        174.63, 180.07,
       ],
     },
     {
@@ -202,12 +205,13 @@ export const conteudo = {
         "Restaurados no amor de Cristo", "Então, curados", "Não queremos mais estar quebrados", "Se por Ele somos nós transformados", "",
         "Eu sou uma obra de arte", "Planejado em cada detalhe", "Me refez com tanto amor", "À Sua imagem eu sou",
       ],
+      // início de cada linha (marcas originais deslocadas em 1: o toque inicial marcava a 2ª linha)
       tempos: [
-        16.95, 20.43, 23.97, 27.12, 30.46, 33.58, 36.97, 42.1, 44.28, 48.65,
-        50.4, 55.39, 58.84, 61.18, 64.27, 68.85, 71.96, 74.24, 78.18, 85.93,
-        88.8, 92.16, 95.25, 100.32, 105.27, 106.64, 108.66, 111.92, 113.82, 116.65,
-        119.38, 122.62, 127.17, 129.73, 132.84, 135.96, 140.47, 144.03, 145.99, 149.02,
-        153.81, 157.21, 159.52, 162.61, 167.63, 170.29, 173.85, 176.88, 180.35, // última linha estimada
+        13.47, 16.95, 20.43, 23.97, 27.12, 30.46, 33.58, 36.97, 42.1, 44.28,
+        48.65, 50.4, 55.39, 58.84, 61.18, 64.27, 68.85, 71.96, 74.24, 78.18,
+        85.93, 88.8, 92.16, 95.25, 100.32, 105.27, 106.64, 108.66, 111.92, 113.82,
+        116.65, 119.38, 122.62, 127.17, 129.73, 132.84, 135.96, 140.47, 144.03, 145.99,
+        149.02, 153.81, 157.21, 159.52, 162.61, 167.63, 170.29, 173.85, 176.88,
       ],
     },
     {
@@ -230,12 +234,13 @@ export const conteudo = {
         "Logo eu, um pobre pecador", "Logo eu, tão fraco e tão devedor", "Logo eu, de graça recebi o amor de Deus (o amor de Deus)", "",
         "Logo eu, finito e carnal", "Logo eu, diante de um Deus imortal", "Logo eu, de graça recebi o amor de Deus (o amor de Deus)", "O amor de Deus (amor de Deus)",
       ],
+      // início de cada linha (marcas originais deslocadas em 1: o toque inicial marcava a 2ª linha)
       tempos: [
-        20.43, 26.17, 30.32, 37.56, 43.34, 49.11, 53.96, 59.89, 65.14, 70.88,
-        82.37, 88.04, 94.3, 99.23, 112.03, 117.72, 122.01, 129.19, 134.95, 140.62,
-        144.96, 155.23, 156.48, 162.4, 170.64, 173.36, 177.31, 185.75, 197.04, 201.99,
-        207.57, 214.09, 219.04, 224.8, 230.7, 236.67, 248.46, 254.2, 259.64, 271.15,
-        276.66, 282.5, 293.56, 298.9, // última linha estimada (tag curto final)
+        14.69, 20.43, 26.17, 30.32, 37.56, 43.34, 49.11, 53.96, 59.89, 65.14,
+        70.88, 82.37, 88.04, 94.3, 99.23, 112.03, 117.72, 122.01, 129.19, 134.95,
+        140.62, 144.96, 155.23, 156.48, 162.4, 170.64, 173.36, 177.31, 185.75, 197.04,
+        201.99, 207.57, 214.09, 219.04, 224.8, 230.7, 236.67, 248.46, 254.2, 259.64,
+        271.15, 276.66, 282.5, 293.56,
       ],
     },
     {
@@ -269,18 +274,16 @@ export const conteudo = {
         "Redentor", "Teu amor me libertou", "De mim e agora vivo, Enfim!", "",
         "Ooh ooh ooh", "Ooh ooh ooh",
       ],
+      // início de cada linha (marcas originais deslocadas em 1: o toque inicial marcava a 2ª linha)
       tempos: [
-        19.42, 25.14, 27.72, 32.08, 33.82, 39.25, 40.95, 45.7, 50.08, 55.15,
-        59.85, 63.7, 67.64, 73.56, 79.11, 102.28, 106.35, 111.04, 112.98, 117.8,
-        120.53, 125.11, 128.88, 134.07, 138.78, 142.55, 149.39, 153.25, 157.74, 163.92,
-        170.28, 172.11, 177.42, 181.39, 185.19, 206.44, 209.6, 213.04, 216.81, 217.7,
-        220.16, 223.87, 227.51, 229, 231.17, 234.65, 235.78, 238.36, 241.87, 243.4,
-        245.58, 249.08, 250.26, 252.72, 255.99, 258.68, 259.98, 263.77,
-        267.51, 271.47, 277.77, // Redentor / Teu amor me libertou / De mim e agora vivo (repetição 1, marcada)
-        281.77, 288.47, 291.42, // repetição 2, marcada
-        295.42, 299.38, 305.68, // repetição 3, estimada repetindo o intervalo da repetição 1
-        309.68, 316.38, 319.33, // repetição 4 + "Enfim!", estimada repetindo o intervalo da repetição 2
-        324.88, 330.43, // Ooh ooh ooh x2, estimado
+        13.7, 19.42, 25.14, 27.72, 32.08, 33.82, 39.25, 40.95, 45.7, 50.08,
+        55.15, 59.85, 63.7, 67.64, 73.56, 79.11, 102.28, 106.35, 111.04, 112.98,
+        117.8, 120.53, 125.11, 128.88, 134.07, 138.78, 142.55, 149.39, 153.25, 157.74,
+        163.92, 170.28, 172.11, 177.42, 181.39, 185.19, 206.44, 209.6, 213.04, 216.81,
+        217.7, 220.16, 223.87, 227.51, 229, 231.17, 234.65, 235.78, 238.36, 241.87,
+        243.4, 245.58, 249.08, 250.26, 252.72, 255.99, 258.68, 259.98, 263.77, 267.51,
+        271.47, 277.77, 281.77, 288.47, 291.42, 295.42, 299.38, 305.68, 309.68, 316.38,
+        319.33, 324.88,
       ],
     },
     {
@@ -320,10 +323,11 @@ export const conteudo = {
         "É ali onde eu me encontro com a fonte do amor",
         "O melhor lugar do mundo, é aos pés, do salvador",
       ],
+      // início de cada linha (marcas originais deslocadas em 1: o toque inicial marcava a 2ª linha)
       tempos: [
-        35.22, 44.14, 50.74, 62.49, 80, 96.92, 105.1, 115.04, 123.29, 142.1,
-        151.5, 159.85, 166.2, 177.84, 195.56, 206.07, 220.45, 230.27, 238.15, 247.97,
-        258.59, 263.79, 270.18, 278.19, // última linha estimada
+        26.3, 35.22, 44.14, 50.74, 62.49, 80, 96.92, 105.1, 115.04, 123.29,
+        142.1, 151.5, 159.85, 166.2, 177.84, 195.56, 206.07, 220.45, 230.27, 238.15,
+        247.97, 258.59, 263.79, 270.18,
       ],
     },
   ],

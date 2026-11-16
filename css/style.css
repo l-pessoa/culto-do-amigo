@@ -347,8 +347,8 @@ body[data-page="index"] .site-footer {
   text-shadow:
     5px 5px 0 rgba(240, 196, 138, 0.9),
     10px 10px 0 rgba(110, 74, 52, 0.4);
-  transform: rotate(-2.5deg);
-  transform-origin: center;
+  /* o letter-spacing deixa um vão depois da última letra; compensa à esquerda p/ centralizar de verdade */
+  padding-inline-start: 0.02em;
 }
 .hero-tagline {
   position: relative;
