@@ -46,20 +46,45 @@ if (page === "pregacao") {
   if (baloes) {
     baloes.innerHTML = g.marcas
       .map(
-        (palavra) => `
+        (m, i) => `
         <li class="balao">
-          <button type="button" class="balao__corpo" aria-label="${palavra}"><span>${palavra}</span></button>
+          <div class="balao__ar">
+            <button type="button" class="balao__corpo" id="marca-${i}"${m.texto ? ` aria-expanded="false" aria-controls="marca-verso-${i}"` : ""}>
+              <span>${m.palavra}</span>${m.texto ? '<svg class="balao__seta" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>' : ""}
+            </button>
+          </div>
+          ${m.texto ? `
+          <div class="balao__verso" id="marca-verso-${i}" role="region" aria-labelledby="marca-${i}" inert>
+            <div class="balao__verso-miolo">
+              <blockquote>${m.texto}</blockquote>
+              <p class="balao__verso-ref">${m.referencia}</p>
+            </div>
+          </div>` : ""}
         </li>`
       )
       .join("");
 
-    // cada toque estoura e volta o balão (só diversão; o sentido de cada palavra fica pra pregação)
+    // cada toque estoura o balão e, se ele tem versículo, abre/fecha a caixa embaixo (uma aberta por vez)
     baloes.addEventListener("click", (event) => {
       const corpo = event.target.closest(".balao__corpo");
       if (!corpo) return;
       corpo.classList.remove("is-pop");
       void corpo.offsetWidth;
       corpo.classList.add("is-pop");
+      if (!corpo.hasAttribute("aria-expanded")) return;
+      const abrir = corpo.getAttribute("aria-expanded") !== "true";
+      baloes.querySelectorAll(".balao__corpo[aria-expanded='true']").forEach((outro) => {
+        outro.setAttribute("aria-expanded", "false");
+        const li = outro.closest(".balao");
+        li.classList.remove("is-aberto");
+        li.querySelector(".balao__verso").inert = true;
+      });
+      if (abrir) {
+        corpo.setAttribute("aria-expanded", "true");
+        const li = corpo.closest(".balao");
+        li.classList.add("is-aberto");
+        li.querySelector(".balao__verso").inert = false;
+      }
     });
     baloes.addEventListener("animationend", (event) => {
       if (event.animationName === "balao-pop") event.target.classList.remove("is-pop");

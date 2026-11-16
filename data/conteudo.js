@@ -62,16 +62,16 @@ export const conteudo = {
     versiculo:
       "Mas Deus prova o seu amor para conosco, em que Cristo morreu por nós, sendo nós ainda pecadores.",
     referencia: "Romanos 5:8",
-    // Palavras-chave do esboço. Só aparecem nos balões, sem explicação: o
-    // desenvolvimento de cada ponto é feito na pregação.
+    // Palavras-chave do esboço. Cada uma pode abrir um versículo (texto na Almeida Corrigida);
+    // para trocar o versículo é só editar `texto` e `referencia`. Sem `texto`, a caixa não abre nada.
     marcas: [
-      "Incondicionalidade",
-      "Paciência",
-      "Cuidado constante",
-      "Sacrifício",
-      "Restaurador",
-      "Permanência",
-      "Acolhimento",
+      { palavra: "Incondicionalidade", referencia: "1 João 4:10", texto: "Nisto está o amor, não em que nós tenhamos amado a Deus, mas em que ele nos amou a nós, e enviou seu Filho para propiciação pelos nossos pecados." },
+      { palavra: "Paciência", referencia: "2 Pedro 3:9", texto: "O Senhor não retarda a sua promessa, ainda que alguns a têm por tardia; mas é longânimo para convosco, não querendo que alguns se percam, senão que todos venham a arrepender-se." },
+      { palavra: "Cuidado constante", referencia: "1 Pedro 5:7", texto: "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós." },
+      { palavra: "Sacrifício", referencia: "João 3:16", texto: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna." },
+      { palavra: "Restaurador", referencia: "Jeremias 30:17", texto: "Porque eu te restaurarei a saúde e curarei as tuas feridas, diz o Senhor." },
+      { palavra: "Permanência", referencia: "Hebreus 13:5", texto: "Não te deixarei, nem te desampararei." },
+      { palavra: "Acolhimento", referencia: "João 6:37", texto: "Todo o que o Pai me dá virá a mim; e o que vem a mim de maneira nenhuma o lançarei fora." },
     ],
   },
 

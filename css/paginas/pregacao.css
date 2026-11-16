@@ -104,8 +104,9 @@
 .baloes.is-in .balao {
   opacity: 1;
   transform: none;
-  animation: balao-flutua var(--dur) ease-in-out var(--delay) infinite;
 }
+/* só o balão flutua; a caixa do versículo fica parada para dar para ler */
+.baloes.is-in .balao__ar { animation: balao-flutua var(--dur) ease-in-out var(--delay) infinite; }
 .balao__corpo {
   position: relative;
   display: flex;
@@ -189,7 +190,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .balao { opacity: 1; transform: none; transition: none; }
-  .baloes.is-in .balao { animation: none; }
+  .baloes.is-in .balao__ar { animation: none; }
+  .balao__verso { transition: none; }
+  .balao__seta { transition: none; }
   .balao__corpo.is-pop { animation: none; }
 }
 @media (scripting: none) {
@@ -243,3 +246,47 @@
 .marcas { width: 100%; margin-top: var(--space-7); }
 .marcas .pregacao-tema { margin-top: 0; }
 .marcas .baloes { margin-top: var(--space-5); }
+
+/* ---------- versículo que abre embaixo do balão ---------- */
+.balao.is-aberto { width: min(100%, 22rem); max-width: 100%; z-index: 2; }
+.balao__seta { flex: none; transition: transform .3s ease; }
+.balao__corpo[aria-expanded="true"] .balao__seta { transform: rotate(180deg); }
+.balao__corpo[aria-expanded] { gap: var(--space-2); }
+.balao__verso {
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-top: var(--space-4);
+  transition: grid-template-rows .4s cubic-bezier(.2,.8,.3,1);
+}
+.balao.is-aberto .balao__verso { grid-template-rows: 1fr; }
+.balao__verso-miolo { overflow: hidden; min-height: 0; }
+.balao__verso blockquote,
+.balao__verso-ref { opacity: 0; transition: opacity .3s ease .1s; }
+.balao.is-aberto .balao__verso blockquote,
+.balao.is-aberto .balao__verso-ref { opacity: 1; }
+.balao__verso blockquote {
+  position: relative;
+  margin: 0;
+  padding: var(--space-5) var(--space-5) var(--space-3);
+  border: 1px solid var(--color-gold);
+  border-bottom: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: radial-gradient(120% 120% at 50% 0%, rgba(240,196,138,.16), transparent 70%), var(--bg-surface);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--color-cream);
+}
+.balao__verso-ref {
+  margin: 0;
+  padding: 0 var(--space-5) var(--space-4);
+  border: 1px solid var(--color-gold);
+  border-top: 0;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background: var(--bg-surface);
+  font-weight: 700;
+  font-size: var(--fs-small);
+  letter-spacing: .06em;
+  color: var(--color-gold);
+}
