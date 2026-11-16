@@ -70,37 +70,6 @@
 .musica-btn__eq i:nth-child(3) { animation-delay: .5s; }
 @keyframes convite-eq { 0%,100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
 
-/* ---------- motivos ---------- */
-.motivos { list-style: none; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
-@media (min-width: 760px) { .motivos { grid-template-columns: repeat(3, 1fr); } }
-.motivo-card {
-  position: relative;
-  padding: var(--space-5);
-  text-align: center;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg);
-  transition: transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s, border-color .25s, opacity .9s, filter .9s;
-}
-.motivo-card:hover, .motivo-card:active {
-  transform: translateY(-6px) rotate(-1deg);
-  border-color: var(--color-gold);
-  box-shadow: 0 14px 28px rgba(0,0,0,.4);
-}
-.motivo-card:nth-child(even):hover { transform: translateY(-6px) rotate(1deg); }
-.motivo-card__icon {
-  display: grid; place-items: center;
-  width: 52px; height: 52px; margin: 0 auto var(--space-3);
-  border-radius: 50%;
-  font-size: 1.6rem;
-  background: linear-gradient(165deg, var(--color-gold), var(--color-terracotta));
-  color: var(--color-ink);
-  transition: transform .4s cubic-bezier(.3,1.6,.5,1);
-}
-.motivo-card:hover .motivo-card__icon { transform: scale(1.15) rotate(12deg); }
-.motivo-card h3 { font-family: var(--font-display); font-size: var(--fs-h3); margin-bottom: var(--space-2); }
-.motivo-card p { color: var(--text-muted); line-height: 1.6; }
-
 /* ---------- horários ---------- */
 .horarios { list-style: none; padding: 0; display: grid; gap: var(--space-3); max-width: 640px; margin-inline: auto; }
 .horario-card {
@@ -181,7 +150,6 @@
 }
 .carrossel__btn:hover { background: var(--color-gold); color: var(--color-ink); }
 .carrossel__btn:active { transform: translateY(-50%) scale(.92); }
-.carrossel__btn:disabled { opacity: .3; cursor: default; pointer-events: none; }
 .carrossel__btn--prev { left: 4px; }
 .carrossel__btn--next { right: 4px; }
 .carrossel__btn:focus-visible, .carrossel__dot:focus-visible { outline: 2px solid var(--color-cream); outline-offset: 2px; }
@@ -225,8 +193,8 @@
 /* ---------- reduzir movimento ---------- */
 @media (prefers-reduced-motion: reduce) {
   .spin-slow, .twinkle, .musica-btn__eq i { animation: none; }
-  .motivo-card, .motivo-card__icon, .horario-card, .carrossel__slide, .carrossel__dot::before { transition: none; }
-  .motivo-card:hover, .motivo-card:nth-child(even):hover, .horario-card:hover, .carrossel__slide.is-active:hover { transform: none; }
+  .horario-card, .carrossel__slide, .carrossel__dot::before { transition: none; }
+  .horario-card:hover, .carrossel__slide.is-active:hover { transform: none; }
   .carrossel__slide { transform: none; }
   .carrossel__track { scroll-behavior: auto; }
 }

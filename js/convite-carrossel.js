@@ -53,12 +53,10 @@ function montar(raiz) {
       if (k === i) d.setAttribute("aria-current", "true");
       else d.removeAttribute("aria-current");
     });
-    prev.disabled = i === 0;
-    next.disabled = i === slides.length - 1;
   }
 
   function ir(i) {
-    i = Math.max(0, Math.min(slides.length - 1, i));
+    i = (i + slides.length) % slides.length; // dá a volta: depois da última, a primeira
     const s = slides[i];
     const alvo = s.offsetLeft - (track.clientWidth - s.clientWidth) / 2;
     track.scrollTo({ left: alvo, behavior: reduzMovimento.matches ? "auto" : "smooth" });
@@ -92,6 +90,34 @@ function montar(raiz) {
     else if (e.key === "Home") { e.preventDefault(); ir(0); }
     else if (e.key === "End") { e.preventDefault(); ir(slides.length - 1); }
   });
+
+  // passa sozinho a cada INTERVALO ms; pausa com dedo/mouse/foco, aba escondida
+  // ou carrossel fora da tela, e nunca roda se a pessoa pediu menos movimento.
+  const INTERVALO = 4000;
+  let timer = 0;
+  let visivel = false;
+  let pausado = false;
+  const podeAutoplay = () => !reduzMovimento.matches && visivel && !pausado && !document.hidden && slides.length > 1;
+  function agendar() {
+    clearTimeout(timer);
+    if (podeAutoplay()) timer = setTimeout(() => { ir(atual + 1); agendar(); }, INTERVALO);
+  }
+  const pausar = () => { pausado = true; agendar(); };
+  const retomar = () => { pausado = false; agendar(); };
+  raiz.addEventListener("pointerenter", pausar);
+  raiz.addEventListener("pointerleave", retomar);
+  raiz.addEventListener("focusin", pausar);
+  raiz.addEventListener("focusout", retomar);
+  // toque: pausa enquanto o dedo está na foto e dá um respiro depois de deslizar
+  track.addEventListener("touchstart", pausar, { passive: true });
+  track.addEventListener("touchend", () => { clearTimeout(timer); pausado = false; timer = setTimeout(agendar, INTERVALO); }, { passive: true });
+  document.addEventListener("visibilitychange", agendar);
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => { visivel = e.isIntersecting; agendar(); }, { threshold: 0.4 }).observe(raiz);
+  } else {
+    visivel = true;
+    agendar();
+  }
 
   marcar(0);
 }

@@ -46,7 +46,6 @@ if (page === "convite") {
   setText("convite-texto", c.texto);
   setText("convite-endereco", conteudo.igreja.endereco);
   setText("convite-mapa-endereco", conteudo.igreja.endereco);
-  setText("convite-motivos-h", c.motivosTitulo);
   setText("convite-horarios-h", c.horariosTitulo);
   setText("convite-grupos-h", c.gruposTitulo);
   setText("convite-grupos-sub", c.gruposSub);
@@ -62,20 +61,6 @@ if (page === "convite") {
   );
 
   const esc = (t) => String(t).replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
-
-  const motivosEl = document.getElementById("convite-motivos");
-  if (motivosEl) {
-    motivosEl.innerHTML = c.motivos
-      .map(
-        (m) => `
-        <li class="motivo-card reveal-child">
-          <span class="motivo-card__icon" aria-hidden="true">${esc(m.icone)}</span>
-          <h3>${esc(m.titulo)}</h3>
-          <p>${esc(m.texto)}</p>
-        </li>`
-      )
-      .join("");
-  }
 
   const horEl = document.getElementById("convite-horarios");
   if (horEl) {
