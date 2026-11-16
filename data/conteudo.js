@@ -25,31 +25,31 @@ export const conteudo = {
   lema: {
     titulo: "Jesus, Melhor Amigo",
     versiculo:
-      "Já vos não chamarei servos, porque o servo não sabe o que faz o seu senhor; mas tenho-vos chamado amigos, porque tudo quanto ouvi de meu Pai vos tenho feito conhecer.",
-    referencia: "João 15:15",
+      "O homem que tem muitos amigos pode congratular-se; mas há amigo mais chegado do que um irmão.",
+    referencia: "Provérbios 18:24",
     fraseEfeito:
-      "Um amigo que não muda, mesmo quando tudo muda ao redor.",
+      "Existe um Amigo mais chegado do que um irmão.",
     ensinoTitulo: "O que esse versículo ensina",
     ensino: [
       {
         rotulo: "O contraste",
         texto:
-          "Servo é quem obedece sem saber o porquê. Amigo é quem é incluído no plano. Jesus diz que já não nos trata como quem só cumpre ordens — Ele quer alguém com quem possa compartilhar o que pensa, o que planeja, o que sente.",
+          "Ter muitos amigos é uma bênção, e o versículo reconhece isso: quem os tem “pode congratular-se”. Mas quantidade não é o mesmo que proximidade. Há pessoas cercadas de gente e, ainda assim, sozinhas.",
       },
       {
-        rotulo: "O convite",
+        rotulo: "O Amigo mais chegado",
         texto:
-          "Essa amizade não foi conquistada, foi oferecida. Jesus escolheu primeiro. A aproximação começou do lado d'Ele, não do nosso.",
+          "Um irmão é o laço mais próximo que conhecemos, e o texto afirma que existe alguém mais chegado ainda. Nós, cristãos, reconhecemos em Jesus esse Amigo: Ele não está perto só quando é conveniente, mas fica ao nosso lado todos os dias (Mateus 28:20).",
       },
       {
-        rotulo: "O custo",
+        rotulo: "A prova",
         texto:
-          "“Ninguém tem maior amor do que este: de dar a sua vida pelos seus amigos” (João 15:13) — a frase logo antes da nossa. Jesus define essa amizade pelo tamanho do que Ele estava disposto a entregar por ela.",
+          "“Ninguém tem maior amor do que este: de dar a sua vida pelos seus amigos” (João 15:13). Jesus não apenas falou de amizade: Ele a provou, entregando a própria vida por nós.",
       },
       {
         rotulo: "Por isso, Culto do Amigo",
         texto:
-          "Não é sobre trazer alguém pra conhecer regras. É sobre apresentar um Deus que não quer obediência à distância — quer amizade de verdade. Esse é o convite de hoje.",
+          "Hoje queremos apresentar esse Amigo. Não uma religião de regras, mas alguém que está mais perto do que imaginamos e que deseja a sua amizade.",
       },
     ],
   },
@@ -102,6 +102,7 @@ export const conteudo = {
       { src: "assets/img/convite/grupos/grupo-01.webp", alt: "Grupo infantil Cânticos de Davi, de camiseta azul, reunido no salão da igreja", legenda: "" },
       { src: "assets/img/convite/grupos/grupo-02.webp", alt: "Grupo Júbilo dos Fiéis, de roupas bege e preto, reunido para uma foto no salão", legenda: "" },
       { src: "assets/img/convite/grupos/grupo-03.webp", alt: "Orquestra e coral da AEC reunidos para uma foto, com violinos, teclado e bateria", legenda: "" },
+      { src: "assets/img/convite/grupos/grupo-08.webp", alt: "Coral da AEC, de camisa branca, reunido diante do telão com a frase Basta uma palavra", legenda: "" },
       { src: "assets/img/convite/grupos/grupo-04.webp", alt: "Jovens e adolescentes de camiseta azul e branca diante do letreiro Átrios 2K24", legenda: "" },
       { src: "assets/img/convite/grupos/grupo-05.webp", alt: "Irmãs de vestido marrom sentadas no salão da igreja", legenda: "" },
       { src: "assets/img/convite/grupos/grupo-06.webp", alt: "Irmãs de vestido rosa reunidas sob o quadro Heroínas da Fé", legenda: "" },
