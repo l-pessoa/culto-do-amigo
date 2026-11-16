@@ -35,6 +35,7 @@ if (page === "tema") {
 
 if (page === "pregacao") {
   const g = conteudo.pregacao;
+  setText("pregacao-leitura", g.tituloVersiculo);
   setText("pregacao-tema", `${g.tema}:`);
   setText("pregacao-pregador", g.pregador);
   setText("pregacao-versiculo", g.versiculo);

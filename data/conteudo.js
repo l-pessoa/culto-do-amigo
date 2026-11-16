@@ -56,6 +56,7 @@ export const conteudo = {
 
   pregacao: {
     titulo: "Pregação",
+    tituloVersiculo: "Leitura bíblica",
     tema: "As marcas do amor de Deus por nós",
     pregador: "Pr. Flávio Lauton",
     versiculo:
